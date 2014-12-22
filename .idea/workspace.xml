@@ -6,8 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bdaeacd-6bfb-4bc2-b873-3fafa0c3a050" name="Default" comment="Merge branch 'master' of https://github.com/ritchie-xl/Web-Log-Analysis-Java&#10;&#10;Conflicts:&#10;&#9;src/json.java&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/json.java" />
+    <list default="true" id="2bdaeacd-6bfb-4bc2-b873-3fafa0c3a050" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/org/vforce/summary.java" afterPath="$PROJECT_DIR$/src/vforce/lei/summary.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Web-Log-Analysis-Java.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,10 +35,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="summary.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/org/vforce/summary.java">
+        <entry file="file://$PROJECT_DIR$/src/vforce/lei/summary.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30124778" vertical-offset="443" max-vertical-offset="1512">
-              <caret line="34" column="57" selection-start-line="34" selection-start-column="57" selection-end-line="34" selection-end-column="57" />
+            <state vertical-scroll-proportion="1.8930482" vertical-offset="0" max-vertical-offset="1512">
+              <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#947#948#0" expanded="true" />
@@ -71,7 +73,11 @@
     </leaf>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="REBASE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -84,6 +90,7 @@
         <option value="$PROJECT_DIR$/src/org/vfoce/lei/summary.java" />
         <option value="$PROJECT_DIR$/src/org/vforce/lei/summary.java" />
         <option value="$PROJECT_DIR$/src/org/vforce/summary.java" />
+        <option value="$PROJECT_DIR$/src/vforce/lei/summary.java" />
       </list>
     </option>
   </component>
@@ -164,7 +171,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="vforce" />
+              <option name="myItemId" value="lei" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -215,20 +222,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Web_Log_Analysis_Java_jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Web-Log-Analysis-Java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Web-Log-Analysis-Java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -593,7 +586,13 @@
       <option name="project" value="LOCAL" />
       <updated>1419289523671</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Merge branch 'master' of https://github.com/ritchie-xl/Web-Log-Analysis-Java&#10;&#10;Conflicts:&#10;&#9;src/json.java&#10;">
+      <created>1419290717127</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1419290717127</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -644,7 +643,8 @@
     <MESSAGE value="change the function name and commit the scripts" />
     <MESSAGE value="commit the summary mapreduce program" />
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/ritchie-xl/Web-Log-Analysis-Java&#10;&#10;Conflicts:&#10;&#9;src/json.java&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/ritchie-xl/Web-Log-Analysis-Java&#10;&#10;Conflicts:&#10;&#9;src/json.java&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -671,10 +671,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/vforce/summary.java">
+    <entry file="file://$PROJECT_DIR$/src/vforce/lei/summary.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30124778" vertical-offset="443" max-vertical-offset="1512">
-          <caret line="34" column="57" selection-start-line="34" selection-start-column="57" selection-end-line="34" selection-end-column="57" />
+        <state vertical-scroll-proportion="1.8930482" vertical-offset="0" max-vertical-offset="1512">
+          <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#947#948#0" expanded="true" />
