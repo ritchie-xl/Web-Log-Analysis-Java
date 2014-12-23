@@ -1,20 +1,25 @@
 package vforce.lei;
 
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.*;
 import org.apache.hadoop.mapred.*;
+import org.apache.hadoop.util.Tool;
+import org.apache.hadoop.util.ToolRunner;
 import org.json.simple.parser.ContainerFactory;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import java.io.*;
 import java.util.*;
 
-public class summary {
+public class summary extends Configured implements Tool {
     public static class mapper extends MapReduceBase implements Mapper<LongWritable,Text,Text, IntWritable> {
         private final static IntWritable one = new IntWritable(1);
         public void map(LongWritable key, Text value, OutputCollector<Text, IntWritable>output, Reporter reporter)
         throws IOException{
             String line = value.toString();
+            // Data cleaning, replace "" with "
             String newLine = line.replaceAll("\"\"","\"");
 
             JSONParser jsonParser = new JSONParser();
@@ -56,8 +61,9 @@ public class summary {
         }
     }
 
-    public static void main(String[] args) throws IOException{
-        JobConf jobConf = new JobConf(summary.class);
+    public int run(String[] args) throws IOException{
+        Configuration conf = getConf();
+        JobConf jobConf = new JobConf(conf, summary.class);
         jobConf.setJobName("summary");
 
         jobConf.setOutputKeyClass(Text.class);
@@ -74,5 +80,11 @@ public class summary {
         FileOutputFormat.setOutputPath(jobConf,new Path(args[2]));
 
         JobClient.runJob(jobConf);
+        return 0;
+    }
+
+    public static void main(String[] args)throws Exception{
+        int retVal = ToolRunner.run(new Configuration(), new summary(),args);
+        System.exit(retVal);
     }
 }
