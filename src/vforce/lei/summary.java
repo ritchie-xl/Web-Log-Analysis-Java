@@ -14,13 +14,18 @@ import java.io.*;
 import java.util.*;
 
 public class summary extends Configured implements Tool {
-    public static class mapper extends MapReduceBase implements Mapper<LongWritable,Text,Text, IntWritable> {
+
+    public static class mapper extends MapReduceBase
+            implements Mapper<LongWritable,Text,Text, IntWritable> {
         private final static IntWritable one = new IntWritable(1);
-        public void map(LongWritable key, Text value, OutputCollector<Text, IntWritable>output, Reporter reporter)
+        @Override
+        public void map(LongWritable key, Text value,
+                        OutputCollector<Text, IntWritable>output, Reporter reporter)
         throws IOException{
             String line = value.toString();
             // Data cleaning, replace "" with "
             String newLine = line.replaceAll("\"\"","\"");
+            System.out.println(newLine);
 
             JSONParser jsonParser = new JSONParser();
             ContainerFactory containerFactory = new ContainerFactory() {
@@ -40,6 +45,7 @@ public class summary extends Configured implements Tool {
                 Iterator it = json.entrySet().iterator();
                 while(it.hasNext()){
                     Map.Entry me = (Map.Entry)it.next();
+                    System.out.println(me.getKey().toString());
                     output.collect(new Text(me.getKey().toString()), one);
                 }
 
@@ -49,19 +55,26 @@ public class summary extends Configured implements Tool {
         }
     }
 
-    public static class reducer extends MapReduceBase implements Reducer<Text, IntWritable,Text, IntWritable> {
-        public void reduce(Text key, Iterator<IntWritable> values, OutputCollector<Text, IntWritable>output, Reporter reporter)
+    public static class reducer extends MapReduceBase
+            implements Reducer<Text, IntWritable,Text, IntWritable> {
+        @Override
+        public void reduce(Text key, Iterator<IntWritable> values,
+                           OutputCollector<Text, IntWritable>output, Reporter reporter)
                 throws IOException{
 
             int sum = 0;
-            while(values.hasNext()){
+            while (values.hasNext() == true) {
                 sum++;
+                System.out.println(sum);
             }
             output.collect(key, new IntWritable(sum));
+//            output.collect(key,new IntWritable(1));
         }
     }
 
-    public int run(String[] args) throws IOException{
+    @Override
+    public int run(String[] args) throws IOException
+        {
         Configuration conf = getConf();
         JobConf jobConf = new JobConf(conf, summary.class);
         jobConf.setJobName("summary");
@@ -71,9 +84,9 @@ public class summary extends Configured implements Tool {
 
         jobConf.setMapperClass(mapper.class);
         jobConf.setReducerClass(reducer.class);
-        jobConf.setCombinerClass(reducer.class);
+//        jobConf.setCombinerClass(reducer.class);
+        jobConf.setNumMapTasks(2);
 
-        jobConf.setInputFormat(TextInputFormat.class);
         jobConf.setOutputFormat(TextOutputFormat.class);
 
         FileInputFormat.setInputPaths(jobConf,new Path(args[1]));
