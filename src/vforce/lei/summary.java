@@ -39,7 +39,6 @@ public class summary extends Configured implements Tool {
                 public Map createObjectContainer() {
                     return new LinkedHashMap();
                 }
-
                 @Override
                 public List creatArrayContainer() {
                     return new LinkedList();
