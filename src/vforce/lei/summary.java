@@ -19,7 +19,6 @@ public class summary extends Configured implements Tool {
         public void map(LongWritable key, Text value, OutputCollector<Text, IntWritable>output, Reporter reporter)
         throws IOException {
             String line = value.toString();
-            // Data cleaning, replace "" with "
 
             LinkedHashMap result = readJson(line);
             Iterator it = result.entrySet().iterator();
@@ -49,11 +48,11 @@ public class summary extends Configured implements Tool {
                 Map json = (Map)jsonParser.parse(newLine, containerFactory);
                 Iterator it = json.entrySet().iterator();
                 while(it.hasNext()){
-                    Map.Entry me = (Map.Entry)it.next();
-                    String field = me.getKey().toString();
+                    Map.Entry m1 = (Map.Entry)it.next();
+                    String field = m1.getKey().toString();
 
                     if(field.equals("type")){
-                        retVal.put(json.get("type"), me.getValue().toString());
+                        retVal.put(json.get("type"), m1.getValue().toString());
                     }else{
                         if(field.equals("user_agent")){
                             field = "userAgent";
@@ -64,20 +63,20 @@ public class summary extends Configured implements Tool {
                             field = "createdAt";
                         }
 
-                        if(me.getValue().getClass().equals
+                        if(m1.getValue().getClass().equals
                                 (java.util.LinkedHashMap.class)){
-                            LinkedHashMap l = (LinkedHashMap)me.getValue();
+                            LinkedHashMap l = (LinkedHashMap)m1.getValue();
                             Iterator i = l.entrySet().iterator();
                             while(i.hasNext()){
                                 Map.Entry m2 = (Map.Entry)i.next();
                                 String key = json.get("type")+":"+
-                                        me.getKey().toString() + ":"+m2.getKey();
+                                        m1.getKey().toString() + ":"+m2.getKey();
                                 String value = m2.getValue().toString();
                                 retVal.put(key,value);
                             }
                         }else{
                             String key = json.get("type") + ":" + field;
-                            String value = me.getValue().toString();
+                            String value = m1.getValue().toString();
                             retVal.put(key,value);
                         }
                     }
