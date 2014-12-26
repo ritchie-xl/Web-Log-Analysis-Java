@@ -14,18 +14,24 @@ import java.io.*;
 import java.util.*;
 
 public class summary extends Configured implements Tool {
-
-    public static class mapper extends MapReduceBase
-            implements Mapper<LongWritable,Text,Text, IntWritable> {
+    public static class mapper extends MapReduceBase implements Mapper<LongWritable,Text,Text, IntWritable> {
         private final static IntWritable one = new IntWritable(1);
-        @Override
-        public void map(LongWritable key, Text value,
-                        OutputCollector<Text, IntWritable>output, Reporter reporter)
-        throws IOException{
+        public void map(LongWritable key, Text value, OutputCollector<Text, IntWritable>output, Reporter reporter)
+        throws IOException {
             String line = value.toString();
             // Data cleaning, replace "" with "
+
+            LinkedHashMap result = readJson(line);
+            Iterator it = result.entrySet().iterator();
+            while(it.hasNext()){
+                Map.Entry me = (Map.Entry)it.next();
+                output.collect(new Text(me.getKey().toString()), one);
+            }
+        }
+
+        public static LinkedHashMap readJson(String line){
+            LinkedHashMap retVal = new LinkedHashMap();
             String newLine = line.replaceAll("\"\"","\"");
-            System.out.println(newLine);
 
             JSONParser jsonParser = new JSONParser();
             ContainerFactory containerFactory = new ContainerFactory() {
@@ -45,36 +51,61 @@ public class summary extends Configured implements Tool {
                 Iterator it = json.entrySet().iterator();
                 while(it.hasNext()){
                     Map.Entry me = (Map.Entry)it.next();
-                    System.out.println(me.getKey().toString());
-                    output.collect(new Text(me.getKey().toString()), one);
+                    String field = me.getKey().toString();
+
+                    if(field.equals("type")){
+                        retVal.put(json.get("type"), me.getValue().toString());
+                    }else{
+                        if(field.equals("user_agent")){
+                            field = "userAgent";
+                        }else if (field.equals("session_id")){
+                            field = "sessionID";
+                        }else if (field.equals("created_at") ||
+                                field.equals("craetedAt")){
+                            field = "createdAt";
+                        }
+
+                        if(me.getValue().getClass().equals
+                                (java.util.LinkedHashMap.class)){
+                            LinkedHashMap l = (LinkedHashMap)me.getValue();
+                            Iterator i = l.entrySet().iterator();
+                            while(i.hasNext()){
+                                Map.Entry m2 = (Map.Entry)i.next();
+                                String key = json.get("type")+":"+
+                                        me.getKey().toString() + ":"+m2.getKey();
+                                String value = m2.getValue().toString();
+                                retVal.put(key,value);
+                            }
+                        }else{
+                            String key = json.get("type") + ":" + field;
+                            String value = me.getValue().toString();
+                            retVal.put(key,value);
+                        }
+                    }
+
                 }
 
             }catch(ParseException e){
                 e.printStackTrace();
             }
+
+            return retVal;
         }
     }
 
-    public static class reducer extends MapReduceBase
-            implements Reducer<Text, IntWritable,Text, IntWritable> {
-        @Override
-        public void reduce(Text key, Iterator<IntWritable> values,
-                           OutputCollector<Text, IntWritable>output, Reporter reporter)
+    public static class reducer extends MapReduceBase implements Reducer<Text, IntWritable,Text, IntWritable> {
+        public void reduce(Text key, Iterator<IntWritable> values, OutputCollector<Text, IntWritable>output, Reporter reporter)
                 throws IOException{
 
             int sum = 0;
-            while (values.hasNext() == true) {
+            while(values.hasNext()){
                 sum++;
-                System.out.println(sum);
             }
             output.collect(key, new IntWritable(sum));
-//            output.collect(key,new IntWritable(1));
         }
     }
 
-    @Override
-    public int run(String[] args) throws IOException
-        {
+    public int run(String[] args) throws IOException{
         Configuration conf = getConf();
         JobConf jobConf = new JobConf(conf, summary.class);
         jobConf.setJobName("summary");
@@ -84,9 +115,9 @@ public class summary extends Configured implements Tool {
 
         jobConf.setMapperClass(mapper.class);
         jobConf.setReducerClass(reducer.class);
-//        jobConf.setCombinerClass(reducer.class);
-        jobConf.setNumMapTasks(2);
+        jobConf.setCombinerClass(reducer.class);
 
+        jobConf.setInputFormat(TextInputFormat.class);
         jobConf.setOutputFormat(TextOutputFormat.class);
 
         FileInputFormat.setInputPaths(jobConf,new Path(args[1]));
