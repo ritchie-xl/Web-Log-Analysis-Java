@@ -2,7 +2,7 @@ package vforce.lei;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
-import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.fs.*;
 import org.apache.hadoop.io.*;
 import org.apache.hadoop.mapred.*;
 import org.apache.hadoop.util.Tool;
@@ -30,7 +30,7 @@ public class summary extends Configured implements Tool {
         }
 
         public static LinkedHashMap readJson(String line){
-            LinkedHashMap retVal = new LinkedHashMap();
+            LinkedHashMap retVal = new LinkedHashMap<String, String>();
             String newLine = line.replaceAll("\"\"","\"");
 
             JSONParser jsonParser = new JSONParser();
@@ -84,7 +84,6 @@ public class summary extends Configured implements Tool {
                     }
 
                 }
-
             }catch(ParseException e){
                 e.printStackTrace();
             }
@@ -120,7 +119,14 @@ public class summary extends Configured implements Tool {
         jobConf.setInputFormat(TextInputFormat.class);
         jobConf.setOutputFormat(TextOutputFormat.class);
 
-        FileInputFormat.setInputPaths(jobConf,new Path(args[1]));
+        FileSystem fs = FileSystem.get(jobConf);
+        FileStatus[] statusList = fs.listStatus(new Path(args[1]));
+        if(statusList != null){
+            for(FileStatus status:statusList){
+                FileInputFormat.addInputPath(jobConf,status.getPath());
+            }
+        }
+//        FileInputFormat.setInputPaths(jobConf,new Path(args[1]));
         FileOutputFormat.setOutputPath(jobConf,new Path(args[2]));
 
         JobClient.runJob(jobConf);
