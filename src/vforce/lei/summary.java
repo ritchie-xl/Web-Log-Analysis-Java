@@ -52,6 +52,7 @@ public class summary extends Configured implements Tool {
                     Map.Entry m1 = (Map.Entry)it.next();
                     String field = m1.getKey().toString();
 
+                    // Normalize all the fields
                     if(field.equals("type")){
                         retVal.put(json.get("type"), m1.getValue().toString());
                     }else{
@@ -85,17 +86,16 @@ public class summary extends Configured implements Tool {
                             retVal.put(key,value);
                         }
                     }
-
                 }
             }catch(ParseException e){
                 e.printStackTrace();
             }
-
             return retVal;
         }
     }
 
     public static class reducer extends MapReduceBase implements Reducer<Text, IntWritable,Text, IntWritable> {
+
         public void reduce(Text key, Iterator<IntWritable> values, OutputCollector<Text, IntWritable>output, Reporter reporter)
                 throws IOException{
 
@@ -105,6 +105,10 @@ public class summary extends Configured implements Tool {
                 values.next();
             }
             output.collect(key, new IntWritable(sum));
+        }
+
+        public void getDataType(String in){
+
         }
     }
 
