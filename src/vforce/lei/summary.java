@@ -12,6 +12,8 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import java.io.*;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class summary extends Configured implements Tool {
     public static class mapper extends MapReduceBase implements Mapper<LongWritable,Text,Text, IntWritable> {
@@ -107,9 +109,52 @@ public class summary extends Configured implements Tool {
             output.collect(key, new IntWritable(sum));
         }
 
-        public void getDataType(String in){
+        public static int getDataType(String in){
+        /* retval
+        1: date
+        2: number
+        3: value
+         */
 
+            String datePattern = "\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(Z|[+-]\\d{2}:\\d{2})";
+
+            int retVal=1;
+            boolean isDate = true;
+            boolean isNumber = false;
+            boolean isValue = false;
+
+            if(isDate == true){
+                Pattern p = Pattern.compile(datePattern);
+                Matcher m = p.matcher(in);
+
+                if(m.find()){
+                    isDate = true;
+                    retVal = 1;
+                    return retVal;
+                }else{
+                    isDate = false;
+                    isNumber = true;
+                    isValue = false;
+                }
+            }
+
+            if(isNumber == true){
+                try {
+                    Double d = Double.parseDouble(in);
+                    retVal = 2;
+                    return retVal;
+                }catch(NumberFormatException e){
+                    isNumber = false;
+                    isValue = true;
+                    isDate = false;
+                }
+            }
+
+            retVal = 3;
+            return retVal;
         }
+
+
     }
 
     public int run(String[] args) throws IOException{

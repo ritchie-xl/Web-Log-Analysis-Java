@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bdaeacd-6bfb-4bc2-b873-3fafa0c3a050" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/getDataType.java" afterPath="$PROJECT_DIR$/src/test/getDataType.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vforce/lei/summary.java" afterPath="$PROJECT_DIR$/src/vforce/lei/summary.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Web-Log-Analysis-Java.iws" />
@@ -33,11 +33,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="getDataType.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="summary.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/vforce/lei/summary.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3625731" vertical-offset="52" max-vertical-offset="930">
+              <caret line="111" column="37" selection-start-line="111" selection-start-column="37" selection-end-line="111" selection-end-column="37" />
+              <folding>
+                <element signature="class#mapper#0;class#summary#0" expanded="false" />
+                <element signature="method#readJson#0;class#mapper#0;class#summary#0" expanded="false" />
+                <element signature="class#1581:1901" expanded="false" />
+                <element signature="method#getDataType#0;class#reducer#0;class#summary#0" expanded="false" />
+                <element signature="method#main#0;class#summary#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="getDataType.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/getDataType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.55954087" vertical-offset="0" max-vertical-offset="1080">
-              <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="1080">
+              <caret line="64" column="5" selection-start-line="21" selection-start-column="4" selection-end-line="64" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -85,10 +101,10 @@
         <option value="$PROJECT_DIR$/src/org/vfoce/lei/summary.java" />
         <option value="$PROJECT_DIR$/src/org/vforce/lei/summary.java" />
         <option value="$PROJECT_DIR$/src/org/vforce/summary.java" />
-        <option value="$PROJECT_DIR$/src/vforce/lei/summary.java" />
         <option value="$PROJECT_DIR$/src/getDataType.java" />
         <option value="$PROJECT_DIR$/src/test/json.java" />
         <option value="$PROJECT_DIR$/src/test/getDataType.java" />
+        <option value="$PROJECT_DIR$/src/vforce/lei/summary.java" />
       </list>
     </option>
   </component>
@@ -154,6 +170,10 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lei" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -170,6 +190,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Web-Log-Analysis-Java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Web-Log-Analysis-Java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -490,7 +524,13 @@
       <option name="project" value="LOCAL" />
       <updated>1419657548071</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="add comment">
+      <created>1419657577740</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1419657577740</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -550,14 +590,15 @@
     <MESSAGE value="fix bugs and finish the normalization of all the fields and subfields" />
     <MESSAGE value="function to check the string is a date or a numeric or a string" />
     <MESSAGE value="move the json test function" />
-    <option name="LAST_COMMIT_MESSAGE" value="move the json test function" />
+    <MESSAGE value="add comment" />
+    <option name="LAST_COMMIT_MESSAGE" value="add comment" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/vforce/lei/summary.java</url>
-          <line>124</line>
+          <line>169</line>
           <properties />
         </line-breakpoint>
       </breakpoints>
@@ -577,7 +618,8 @@
           <folding>
             <element signature="class#mapper#0;class#summary#0" expanded="false" />
             <element signature="method#readJson#0;class#mapper#0;class#summary#0" expanded="false" />
-            <element signature="class#1517:1837" expanded="false" />
+            <element signature="class#1581:1901" expanded="false" />
+            <element signature="method#getDataType#0;class#reducer#0;class#summary#0" expanded="false" />
             <element signature="method#main#0;class#summary#0" expanded="false" />
           </folding>
         </state>
@@ -632,7 +674,8 @@
           <folding>
             <element signature="class#mapper#0;class#summary#0" expanded="false" />
             <element signature="method#readJson#0;class#mapper#0;class#summary#0" expanded="false" />
-            <element signature="class#1517:1837" expanded="false" />
+            <element signature="class#1581:1901" expanded="false" />
+            <element signature="method#getDataType#0;class#reducer#0;class#summary#0" expanded="false" />
             <element signature="method#main#0;class#summary#0" expanded="false" />
           </folding>
         </state>
@@ -669,7 +712,8 @@
           <folding>
             <element signature="class#mapper#0;class#summary#0" expanded="false" />
             <element signature="method#readJson#0;class#mapper#0;class#summary#0" expanded="false" />
-            <element signature="class#1517:1837" expanded="false" />
+            <element signature="class#1581:1901" expanded="false" />
+            <element signature="method#getDataType#0;class#reducer#0;class#summary#0" expanded="false" />
             <element signature="method#main#0;class#summary#0" expanded="false" />
           </folding>
         </state>
@@ -706,7 +750,8 @@
           <folding>
             <element signature="class#mapper#0;class#summary#0" expanded="false" />
             <element signature="method#readJson#0;class#mapper#0;class#summary#0" expanded="false" />
-            <element signature="class#1517:1837" expanded="false" />
+            <element signature="class#1581:1901" expanded="false" />
+            <element signature="method#getDataType#0;class#reducer#0;class#summary#0" expanded="false" />
             <element signature="method#main#0;class#summary#0" expanded="false" />
           </folding>
         </state>
@@ -735,7 +780,8 @@
           <folding>
             <element signature="class#mapper#0;class#summary#0" expanded="false" />
             <element signature="method#readJson#0;class#mapper#0;class#summary#0" expanded="false" />
-            <element signature="class#1517:1837" expanded="false" />
+            <element signature="class#1581:1901" expanded="false" />
+            <element signature="method#getDataType#0;class#reducer#0;class#summary#0" expanded="false" />
             <element signature="method#main#0;class#summary#0" expanded="false" />
           </folding>
         </state>
@@ -764,7 +810,8 @@
           <folding>
             <element signature="class#mapper#0;class#summary#0" expanded="false" />
             <element signature="method#readJson#0;class#mapper#0;class#summary#0" expanded="false" />
-            <element signature="class#1517:1837" expanded="false" />
+            <element signature="class#1581:1901" expanded="false" />
+            <element signature="method#getDataType#0;class#reducer#0;class#summary#0" expanded="false" />
             <element signature="method#main#0;class#summary#0" expanded="false" />
           </folding>
         </state>
@@ -802,19 +849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vforce/lei/summary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1116">
-          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-          <folding>
-            <element signature="class#mapper#0;class#summary#0" expanded="false" />
-            <element signature="method#readJson#0;class#mapper#0;class#summary#0" expanded="false" />
-            <element signature="class#1517:1837" expanded="false" />
-            <element signature="method#main#0;class#summary#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/test.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
@@ -833,10 +867,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/getDataType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55954087" vertical-offset="0" max-vertical-offset="1080">
-          <caret line="26" column="11" selection-start-line="26" selection-start-column="11" selection-end-line="26" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="1080">
+          <caret line="64" column="5" selection-start-line="21" selection-start-column="4" selection-end-line="64" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vforce/lei/summary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3625731" vertical-offset="52" max-vertical-offset="930">
+          <caret line="111" column="37" selection-start-line="111" selection-start-column="37" selection-end-line="111" selection-end-column="37" />
+          <folding>
+            <element signature="class#mapper#0;class#summary#0" expanded="false" />
+            <element signature="method#readJson#0;class#mapper#0;class#summary#0" expanded="false" />
+            <element signature="class#1581:1901" expanded="false" />
+            <element signature="method#getDataType#0;class#reducer#0;class#summary#0" expanded="false" />
+            <element signature="method#main#0;class#summary#0" expanded="false" />
           </folding>
         </state>
       </provider>
