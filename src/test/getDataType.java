@@ -9,11 +9,7 @@ import java.util.regex.Matcher;
 public class getDataType {
 
     public static void main(String[] in) {
-        /* retval
-        1: date
-        2: number
-        3: value
-         */
+
         String test1 = "2013-05-08T08:00:00Z";
         String test2 = "421413243124";
         String test3 = "b549de69-a0dc-4b8a-8ee1-01f1a1f5a66e";
@@ -24,6 +20,11 @@ public class getDataType {
     }
 
     public static int get(String in){
+        /* retval
+        1: date
+        2: number
+        3: value
+         */
 
         String datePattern = "\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(Z|[+-]\\d{2}:\\d{2})";
 
