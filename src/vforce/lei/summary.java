@@ -24,6 +24,7 @@ public class summary extends Configured implements Tool {
             Iterator it = result.entrySet().iterator();
             while(it.hasNext()){
                 Map.Entry me = (Map.Entry)it.next();
+                System.out.println(me.getKey());
                 output.collect(new Text(me.getKey().toString()), one);
             }
         }
@@ -69,8 +70,12 @@ public class summary extends Configured implements Tool {
                             Iterator i = l.entrySet().iterator();
                             while(i.hasNext()){
                                 Map.Entry m2 = (Map.Entry)i.next();
+                                String subfield = m2.getKey().toString();
+                                if(subfield.equals("item_id")){
+                                    subfield = "itemID";
+                                }
                                 String key = json.get("type")+":"+
-                                        m1.getKey().toString() + ":"+m2.getKey();
+                                        m1.getKey().toString() + ":"+subfield;
                                 String value = m2.getValue().toString();
                                 retVal.put(key,value);
                             }
@@ -96,7 +101,7 @@ public class summary extends Configured implements Tool {
 
             int sum = 0;
             while(values.hasNext()){
-                sum++;
+                sum=sum+1;
                 values.next();
             }
             output.collect(key, new IntWritable(sum));
@@ -113,11 +118,12 @@ public class summary extends Configured implements Tool {
 
         jobConf.setMapperClass(mapper.class);
         jobConf.setReducerClass(reducer.class);
-        jobConf.setCombinerClass(reducer.class);
+//        jobConf.setCombinerClass(reducer.class);
 
         jobConf.setInputFormat(TextInputFormat.class);
         jobConf.setOutputFormat(TextOutputFormat.class);
 
+        // Add multiple files as input of MapReduce program
         FileSystem fs = FileSystem.get(jobConf);
         FileStatus[] statusList = fs.listStatus(new Path(args[1]));
         if(statusList != null){
@@ -125,7 +131,6 @@ public class summary extends Configured implements Tool {
                 FileInputFormat.addInputPath(jobConf,status.getPath());
             }
         }
-//        FileInputFormat.setInputPaths(jobConf,new Path(args[1]));
         FileOutputFormat.setOutputPath(jobConf,new Path(args[2]));
 
         JobClient.runJob(jobConf);
