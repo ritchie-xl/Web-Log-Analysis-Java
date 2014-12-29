@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="cleaning">
+    <output-path>$PROJECT_DIR$/out/artifacts/cleaning</output-path>
+    <root id="archive" name="cleaning.jar">
+      <element id="module-output" name="Web-Log-Analysis-Java" />
+      <element id="library" level="project" name="commons-logging-1.2" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/hadoop-ant-2.0.0-mr1-cdh4.4.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/hadoop-core-2.0.0-mr1-cdh4.4.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/hadoop-examples-2.0.0-mr1-cdh4.4.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/hadoop-test-2.0.0-mr1-cdh4.4.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/hadoop-tools-2.0.0-mr1-cdh4.4.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/hadoop-annotations-2.0.0-cdh4.4.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/hadoop-auth-2.0.0-cdh4.4.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/hadoop-common-2.0.0-cdh4.4.0-tests.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/hadoop-common-2.0.0-cdh4.4.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/json-simple-1.1.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
