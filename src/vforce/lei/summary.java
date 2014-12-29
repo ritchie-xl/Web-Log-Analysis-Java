@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
 public class summary extends Configured implements Tool {
     private static String datePattern = "\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(Z|[+-]\\d{2}:\\d{2})";
 
-    public static class mapper extends MapReduceBase implements Mapper<LongWritable, Text, Text, Text> {
+    public static class mapper extends MapReduceBase implements Mapper<LongWritable, Text , Text ,Text> {
         public void map(LongWritable key, Text value, OutputCollector<Text, Text> output, Reporter reporter)
                 throws IOException {
             String line = value.toString();
@@ -187,8 +187,10 @@ public class summary extends Configured implements Tool {
         JobConf jobConf = new JobConf(conf, summary.class);
         jobConf.setJobName("summary");
 
+        jobConf.setMapOutputKeyClass(Text.class);
+        jobConf.setMapOutputValueClass(Text.class);
         jobConf.setOutputKeyClass(Text.class);
-        jobConf.setOutputValueClass(IntWritable.class);
+        jobConf.setOutputValueClass(Text.class);
 
         jobConf.setMapperClass(mapper.class);
         jobConf.setReducerClass(reducer.class);
