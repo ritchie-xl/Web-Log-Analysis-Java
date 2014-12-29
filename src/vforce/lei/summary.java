@@ -58,10 +58,10 @@ public class summary extends Configured implements Tool {
                     Map.Entry m1 = (Map.Entry) it.next();
                     String field = m1.getKey().toString();
 
-                    // Normalize all the fields
                     if (field.equals("type")) {
-                        retVal.put(json.get("type"), m1.getValue().toString());
+                        retVal.put(json.get("type"), "HEAD");
                     } else {
+                        // Normalize all the fields
                         if (field.equals("user_agent")) {
                             field = "userAgent";
                         } else if (field.equals("session_id")) {
@@ -81,6 +81,8 @@ public class summary extends Configured implements Tool {
                                 if (subField.equals("item_id")) {
                                     subField = "itemID";
                                 }
+                                String head = json.get("type") + ":" + m1.getKey().toString();
+                                retVal.put(head, "HEAD");
                                 String key = json.get("type") + ":" +
                                         m1.getKey().toString() + ":" + subField;
                                 String value = m2.getValue().toString();
@@ -105,50 +107,89 @@ public class summary extends Configured implements Tool {
         public void reduce(Text key, Iterator<Text> values, OutputCollector<Text, Text> output, Reporter reporter)
                 throws IOException {
 
-            int count = 1;
-            String curValue = values.next().toString();
-            int dataType = getDataType(curValue);
             String retVal = "";
+            int dataType;
+            int count = 1;
 
-            if (dataType == 1) { // The value is a date
+            String curVal = values.next().toString();
 
+            if(curVal.equals("HEAD")){
+                while(values.hasNext()){ // if the key is the head, only output the count
+                    count ++;
+                    values.next();
+                }
+                retVal = " - " + String.valueOf(count);
+            }else {
+                dataType = getDataType(curVal);
+                if (dataType == 1) {
+                    String first = curVal;
+                    String last = curVal;
 
-            } else if (dataType == 2) { // The value is a numeric
-                double sum = 0;
-                int min;
-                int max;
-                int curInt = Integer.parseInt(curValue);
-                sum = sum + curInt;
-                min = curInt;
-                max = curInt;
-                while (values.hasNext()) {
-                    curInt = Integer.parseInt(values.next().toString());
-                    sum = sum + curInt;
-                    count = count + 1;
-                    if (curInt > max) {
-                        max = curInt;
+                    while (values.hasNext()) {
+                        curVal = values.next().toString();
+                        if (curVal.compareTo(first) < 0) {
+                            first = curVal;
+                        }
+
+                        if (curVal.compareTo(last) > 0) {
+                            last = curVal;
+                        }
+                        count++;
                     }
-                    if (curInt < min) {
-                        min = curInt;
-                    }
+                    retVal = " - min: " + first + ", max: " + last + ", count: " + count;
                 }
 
-                double avg = sum / count;
+                if(dataType == 2){
+                    HashMap hashMap = new HashMap();
+                }
 
-                retVal = "min: " + min + ", max: " + max + ", average: " + avg + ",count: " + count;
-            } else { // The value is a value or a identifier
-
-
+                if (dataType == 3) {
+                    HashMap hashMap = new HashMap();
+                    hashMap.put(curVal, 1);
+                    int flag = 0; // 1: identifier 0:categorical values;
+                    while (values.hasNext()) {
+                        curVal = values.next().toString();
+                        if (hashMap.size() >= 3) { // It's a identifier
+                            count ++;
+                            flag = 1;
+                        } else { //It's a categorical values;
+                            hashMap.put(curVal,1);
+                            count ++;
+                        }
+                    }
+                    if(flag == 0){
+                        retVal = hashMap.keySet().toString() + ", count: " + count;
+                    }else{
+                        retVal = " - identifier, count: " + count;
+                    }
+                }
             }
             output.collect(key, new Text(retVal));
         }
+
+//        public static Calendar getDate(String in){
+//            String dateString = in.substring(0,10);
+//            String timeString = in.substring(11,19);
+//            String[] dateArray = dateString.split("-");
+//            String[] timeArray = timeString.split(":");
+//
+//            int year = Integer.parseInt(dateArray[0]);
+//            int month = Integer.parseInt(dateArray[1]);
+//            int day = Integer.parseInt(dateArray[2]);
+//            int hour = Integer.parseInt(timeArray[0]);
+//            int minute = Integer.parseInt(timeArray[1]);
+//            int second = Integer.parseInt(timeArray[2]);
+//
+//            Calendar calendar = new GregorianCalendar();
+//            calendar.set(year,month,day,hour,minute,second);
+//            return calendar;
+//        }
 
         public static int getDataType(String in) {
         /* retVal
         1: date
         2: number
-        3: value
-        4: identifier
+        3: string
          */
 
             int retVal = 3;
@@ -169,16 +210,17 @@ public class summary extends Configured implements Tool {
 
             if (isNumber) {
                 try {
-                    Double d = Double.parseDouble(in);
+//                    Double d = Double.parseDouble(in);
+                    Long l = Long.parseLong(in);
                     retVal = 2;
                     return retVal;
                 } catch (NumberFormatException e) {
                     retVal = 3;
+                    return retVal;
                 }
             }
             return retVal;
         }
-
 
     }
 
