@@ -79,7 +79,7 @@ public class summary extends Configured implements Tool {
                                 Map.Entry m2 = (Map.Entry) i.next();
                                 String subField = m2.getKey().toString();
                                 if (subField.equals("item_id")) {
-                                    subField = "itemID";
+                                    subField = "itemId";
                                 }
                                 String head = json.get("type") + ":" + m1.getKey().toString();
                                 retVal.put(head, "HEAD");
@@ -122,25 +122,60 @@ public class summary extends Configured implements Tool {
             }else {
                 dataType = getDataType(curVal);
                 if (dataType == 1) {
-                    String first = curVal;
-                    String last = curVal;
+                    String min = curVal;
+                    String max = curVal;
 
                     while (values.hasNext()) {
                         curVal = values.next().toString();
-                        if (curVal.compareTo(first) < 0) {
-                            first = curVal;
+                        if (curVal.compareTo(min) < 0) {
+                            min = curVal;
                         }
 
-                        if (curVal.compareTo(last) > 0) {
-                            last = curVal;
+                        if (curVal.compareTo(max) > 0) {
+                            max = curVal;
                         }
                         count++;
                     }
-                    retVal = " - min: " + first + ", max: " + last + ", count: " + count;
+                    retVal = " - min: " + min + ", max: " + max + ", count: " + count;
                 }
 
                 if(dataType == 2){
-                    HashMap hashMap = new HashMap();
+                    int min,max;
+                    int flagForNum = 1; // 1: numeric 2: identifier 3: categorical
+                    int curInt = Integer.parseInt(curVal);
+                    double sum =curInt;
+                    min = curInt;
+                    max = curInt;
+                    HashMap hashMapForNum = new HashMap();
+                    hashMapForNum.put(curVal,null);
+                    while(values.hasNext()){
+                        curVal = values.next().toString();
+                        dataType = getDataType(curVal);
+                        count ++ ;
+                        if(dataType == 2 && flagForNum == 1){
+                            curInt = Integer.parseInt(curVal);
+                            sum = sum + curInt;
+                            if(curInt < min){ min = curInt;}
+                            if(curInt > max){ max = curInt;}
+                        }else{
+                            if(hashMapForNum.size() >= 10){
+                                flagForNum = 2;
+                            }else{
+                                flagForNum = 3;
+                                hashMapForNum.put(curVal,null);
+                            }
+                        }
+                    }
+
+                    if(flagForNum == 1) {
+                        String average = String.format("%.2f", sum * 1.0 / count);
+                        retVal = " - min: " + min + ", max: " + max + ", average: " + average
+                                + ", count: " + count;
+                    }else if(flagForNum == 2){
+                        retVal = " - identifier, count: " + count;
+                    }else{
+                        retVal = hashMapForNum.keySet().toString() + ", count: " + count;
+                    }
                 }
 
                 if (dataType == 3) {
@@ -149,11 +184,11 @@ public class summary extends Configured implements Tool {
                     int flag = 0; // 1: identifier 0:categorical values;
                     while (values.hasNext()) {
                         curVal = values.next().toString();
-                        if (hashMap.size() >= 3) { // It's a identifier
+                        if (hashMap.size() >= 10) { // It's a identifier
                             count ++;
                             flag = 1;
                         } else { //It's a categorical values;
-                            hashMap.put(curVal,1);
+                            hashMap.put(curVal,null);
                             count ++;
                         }
                     }
