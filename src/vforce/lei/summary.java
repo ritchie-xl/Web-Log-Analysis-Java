@@ -24,6 +24,7 @@ public class summary extends Configured implements Tool {
                 throws IOException {
             String line = value.toString();
 
+            // Parse each line in the json format and save the result to a LinkedHashMap
             LinkedHashMap result = readJson(line);
             Iterator it = result.entrySet().iterator();
             while (it.hasNext()) {
@@ -34,11 +35,24 @@ public class summary extends Configured implements Tool {
             }
         }
 
+        /* This function is used to parse the line as one json format record
+            Input: string in json format
+            Output: a LinkedHashMap including the key:value pair of the json file
+         */
         public static LinkedHashMap readJson(String line) {
             LinkedHashMap retVal = new LinkedHashMap<String, String>();
+
+            // Clean the data with replacing all the "" with "
             String newLine = line.replaceAll("\"\"", "\"");
 
+            // Utilize the simple-json to parse all the json file
             JSONParser jsonParser = new JSONParser();
+
+            /* Utilize the container to save the result
+                Need to implement the createObjectContainer and
+                createArrayContainer methods
+             */
+
             ContainerFactory containerFactory = new ContainerFactory() {
                 @Override
                 public Map createObjectContainer() {
@@ -51,6 +65,8 @@ public class summary extends Configured implements Tool {
                 }
             };
 
+            // After parsing the json string, the result will be saved into a map, then
+            // the program can traverse the map to get each key: value pair
             try {
                 Map json = (Map) jsonParser.parse(newLine, containerFactory);
                 Iterator it = json.entrySet().iterator();
@@ -58,6 +74,8 @@ public class summary extends Configured implements Tool {
                     Map.Entry m1 = (Map.Entry) it.next();
                     String field = m1.getKey().toString();
 
+                    // If the key is the type then collect the type as key and "HEAD"
+                    // as value in the mapper
                     if (field.equals("type")) {
                         retVal.put(json.get("type"), "HEAD");
                     } else {
@@ -71,6 +89,7 @@ public class summary extends Configured implements Tool {
                             field = "createdAt";
                         }
 
+                        // Handle the values have subfields
                         if (m1.getValue().getClass().equals
                                 (java.util.LinkedHashMap.class)) {
                             LinkedHashMap l = (LinkedHashMap) m1.getValue();
@@ -78,17 +97,24 @@ public class summary extends Configured implements Tool {
                             while (i.hasNext()) {
                                 Map.Entry m2 = (Map.Entry) i.next();
                                 String subField = m2.getKey().toString();
+
+                                // Normalize the itemId
                                 if (subField.equals("item_id")) {
                                     subField = "itemId";
                                 }
+
+                                // Collect the subfields' type as key and "HEAD" as value for mapper
                                 String head = json.get("type") + ":" + m1.getKey().toString();
                                 retVal.put(head, "HEAD");
+
+                                // Collect all the subfields' key and value for mapper
                                 String key = json.get("type") + ":" +
                                         m1.getKey().toString() + ":" + subField;
                                 String value = m2.getValue().toString();
                                 retVal.put(key, value);
                             }
                         } else {
+                            // Handle the values don't have subfields
                             String key = json.get("type") + ":" + field;
                             String value = m1.getValue().toString();
                             retVal.put(key, value);
@@ -114,12 +140,20 @@ public class summary extends Configured implements Tool {
             String curVal = values.next().toString();
 
             if(curVal.equals("HEAD")){
+                // Count the types
                 while(values.hasNext()){ // if the key is the head, only output the count
                     count ++;
                     values.next();
                 }
                 retVal = " - " + String.valueOf(count);
             }else {
+                // Summary the non-tye fields
+
+                /* Get the data type of the values
+                1 if they're date
+                2 if they're numeric
+                3 if they're strings
+                 */
                 dataType = getDataType(curVal);
                 if (dataType == 1) {
                     String min = curVal;

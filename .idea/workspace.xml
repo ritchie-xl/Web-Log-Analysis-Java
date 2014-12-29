@@ -6,8 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bdaeacd-6bfb-4bc2-b873-3fafa0c3a050" name="Default" comment="Finish the summary MapReduce Program">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/test.java" afterPath="" />
+    <list default="true" id="2bdaeacd-6bfb-4bc2-b873-3fafa0c3a050" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vforce/lei/summary.java" afterPath="$PROJECT_DIR$/src/vforce/lei/summary.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -37,15 +36,14 @@
       <file leaf-file-name="summary.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/vforce/lei/summary.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5649547" vertical-offset="3496" max-vertical-offset="4158">
-              <caret line="255" column="13" selection-start-line="255" selection-start-column="13" selection-end-line="255" selection-end-column="13" />
+            <state vertical-scroll-proportion="-1.2507553" vertical-offset="1422" max-vertical-offset="3312">
+              <caret line="154" column="36" selection-start-line="154" selection-start-column="36" selection-end-line="154" selection-end-column="36" />
               <folding>
-                <element signature="class#1680:2001" expanded="false" />
-                <element signature="e#1778#1779#0" expanded="true" />
-                <element signature="e#1844#1845#0" expanded="true" />
-                <element signature="e#1923#1924#0" expanded="true" />
-                <element signature="e#1986#1987#0" expanded="true" />
-                <element signature="e#8632#8684#0" expanded="false" />
+                <element signature="class#mapper#0;class#summary#0" expanded="false" />
+                <element signature="e#2392#2393#0" expanded="true" />
+                <element signature="e#2458#2459#0" expanded="true" />
+                <element signature="e#2537#2538#0" expanded="true" />
+                <element signature="e#2600#2601#0" expanded="true" />
                 <element signature="method#run#0;class#summary#0" expanded="false" />
                 <element signature="method#main#0;class#summary#0" expanded="false" />
               </folding>
@@ -693,7 +691,13 @@
       <option name="project" value="LOCAL" />
       <updated>1419874892256</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Finish the summary MapReduce Program">
+      <created>1419878621903</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1419878621903</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -770,12 +774,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2340">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#1680:2001" expanded="false" />
-            <element signature="e#1778#1779#0" expanded="true" />
-            <element signature="e#1844#1845#0" expanded="true" />
-            <element signature="e#1923#1924#0" expanded="true" />
-            <element signature="e#1986#1987#0" expanded="true" />
-            <element signature="e#8632#8684#0" expanded="false" />
+            <element signature="class#mapper#0;class#summary#0" expanded="false" />
+            <element signature="e#2392#2393#0" expanded="true" />
+            <element signature="e#2458#2459#0" expanded="true" />
+            <element signature="e#2537#2538#0" expanded="true" />
+            <element signature="e#2600#2601#0" expanded="true" />
             <element signature="method#run#0;class#summary#0" expanded="false" />
             <element signature="method#main#0;class#summary#0" expanded="false" />
           </folding>
@@ -821,12 +824,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2610">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#1680:2001" expanded="false" />
-            <element signature="e#1778#1779#0" expanded="true" />
-            <element signature="e#1844#1845#0" expanded="true" />
-            <element signature="e#1923#1924#0" expanded="true" />
-            <element signature="e#1986#1987#0" expanded="true" />
-            <element signature="e#8632#8684#0" expanded="false" />
+            <element signature="class#mapper#0;class#summary#0" expanded="false" />
+            <element signature="e#2392#2393#0" expanded="true" />
+            <element signature="e#2458#2459#0" expanded="true" />
+            <element signature="e#2537#2538#0" expanded="true" />
+            <element signature="e#2600#2601#0" expanded="true" />
             <element signature="method#run#0;class#summary#0" expanded="false" />
             <element signature="method#main#0;class#summary#0" expanded="false" />
           </folding>
@@ -872,12 +874,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3636">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#1680:2001" expanded="false" />
-            <element signature="e#1778#1779#0" expanded="true" />
-            <element signature="e#1844#1845#0" expanded="true" />
-            <element signature="e#1923#1924#0" expanded="true" />
-            <element signature="e#1986#1987#0" expanded="true" />
-            <element signature="e#8632#8684#0" expanded="false" />
+            <element signature="class#mapper#0;class#summary#0" expanded="false" />
+            <element signature="e#2392#2393#0" expanded="true" />
+            <element signature="e#2458#2459#0" expanded="true" />
+            <element signature="e#2537#2538#0" expanded="true" />
+            <element signature="e#2600#2601#0" expanded="true" />
             <element signature="method#run#0;class#summary#0" expanded="false" />
             <element signature="method#main#0;class#summary#0" expanded="false" />
           </folding>
@@ -913,12 +914,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1116">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#1680:2001" expanded="false" />
-            <element signature="e#1778#1779#0" expanded="true" />
-            <element signature="e#1844#1845#0" expanded="true" />
-            <element signature="e#1923#1924#0" expanded="true" />
-            <element signature="e#1986#1987#0" expanded="true" />
-            <element signature="e#8632#8684#0" expanded="false" />
+            <element signature="class#mapper#0;class#summary#0" expanded="false" />
+            <element signature="e#2392#2393#0" expanded="true" />
+            <element signature="e#2458#2459#0" expanded="true" />
+            <element signature="e#2537#2538#0" expanded="true" />
+            <element signature="e#2600#2601#0" expanded="true" />
             <element signature="method#run#0;class#summary#0" expanded="false" />
             <element signature="method#main#0;class#summary#0" expanded="false" />
           </folding>
@@ -954,12 +954,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="1116">
           <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
           <folding>
-            <element signature="class#1680:2001" expanded="false" />
-            <element signature="e#1778#1779#0" expanded="true" />
-            <element signature="e#1844#1845#0" expanded="true" />
-            <element signature="e#1923#1924#0" expanded="true" />
-            <element signature="e#1986#1987#0" expanded="true" />
-            <element signature="e#8632#8684#0" expanded="false" />
+            <element signature="class#mapper#0;class#summary#0" expanded="false" />
+            <element signature="e#2392#2393#0" expanded="true" />
+            <element signature="e#2458#2459#0" expanded="true" />
+            <element signature="e#2537#2538#0" expanded="true" />
+            <element signature="e#2600#2601#0" expanded="true" />
             <element signature="method#run#0;class#summary#0" expanded="false" />
             <element signature="method#main#0;class#summary#0" expanded="false" />
           </folding>
@@ -995,12 +994,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1854">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#1680:2001" expanded="false" />
-            <element signature="e#1778#1779#0" expanded="true" />
-            <element signature="e#1844#1845#0" expanded="true" />
-            <element signature="e#1923#1924#0" expanded="true" />
-            <element signature="e#1986#1987#0" expanded="true" />
-            <element signature="e#8632#8684#0" expanded="false" />
+            <element signature="class#mapper#0;class#summary#0" expanded="false" />
+            <element signature="e#2392#2393#0" expanded="true" />
+            <element signature="e#2458#2459#0" expanded="true" />
+            <element signature="e#2537#2538#0" expanded="true" />
+            <element signature="e#2600#2601#0" expanded="true" />
             <element signature="method#run#0;class#summary#0" expanded="false" />
             <element signature="method#main#0;class#summary#0" expanded="false" />
           </folding>
@@ -1028,12 +1026,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2340">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#1680:2001" expanded="false" />
-            <element signature="e#1778#1779#0" expanded="true" />
-            <element signature="e#1844#1845#0" expanded="true" />
-            <element signature="e#1923#1924#0" expanded="true" />
-            <element signature="e#1986#1987#0" expanded="true" />
-            <element signature="e#8632#8684#0" expanded="false" />
+            <element signature="class#mapper#0;class#summary#0" expanded="false" />
+            <element signature="e#2392#2393#0" expanded="true" />
+            <element signature="e#2458#2459#0" expanded="true" />
+            <element signature="e#2537#2538#0" expanded="true" />
+            <element signature="e#2600#2601#0" expanded="true" />
             <element signature="method#run#0;class#summary#0" expanded="false" />
             <element signature="method#main#0;class#summary#0" expanded="false" />
           </folding>
@@ -1061,12 +1058,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1656">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#1680:2001" expanded="false" />
-            <element signature="e#1778#1779#0" expanded="true" />
-            <element signature="e#1844#1845#0" expanded="true" />
-            <element signature="e#1923#1924#0" expanded="true" />
-            <element signature="e#1986#1987#0" expanded="true" />
-            <element signature="e#8632#8684#0" expanded="false" />
+            <element signature="class#mapper#0;class#summary#0" expanded="false" />
+            <element signature="e#2392#2393#0" expanded="true" />
+            <element signature="e#2458#2459#0" expanded="true" />
+            <element signature="e#2537#2538#0" expanded="true" />
+            <element signature="e#2600#2601#0" expanded="true" />
             <element signature="method#run#0;class#summary#0" expanded="false" />
             <element signature="method#main#0;class#summary#0" expanded="false" />
           </folding>
@@ -1094,12 +1090,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1458">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#1680:2001" expanded="false" />
-            <element signature="e#1778#1779#0" expanded="true" />
-            <element signature="e#1844#1845#0" expanded="true" />
-            <element signature="e#1923#1924#0" expanded="true" />
-            <element signature="e#1986#1987#0" expanded="true" />
-            <element signature="e#8632#8684#0" expanded="false" />
+            <element signature="class#mapper#0;class#summary#0" expanded="false" />
+            <element signature="e#2392#2393#0" expanded="true" />
+            <element signature="e#2458#2459#0" expanded="true" />
+            <element signature="e#2537#2538#0" expanded="true" />
+            <element signature="e#2600#2601#0" expanded="true" />
             <element signature="method#run#0;class#summary#0" expanded="false" />
             <element signature="method#main#0;class#summary#0" expanded="false" />
           </folding>
@@ -1127,12 +1122,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1530">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="class#1680:2001" expanded="false" />
-            <element signature="e#1778#1779#0" expanded="true" />
-            <element signature="e#1844#1845#0" expanded="true" />
-            <element signature="e#1923#1924#0" expanded="true" />
-            <element signature="e#1986#1987#0" expanded="true" />
-            <element signature="e#8632#8684#0" expanded="false" />
+            <element signature="class#mapper#0;class#summary#0" expanded="false" />
+            <element signature="e#2392#2393#0" expanded="true" />
+            <element signature="e#2458#2459#0" expanded="true" />
+            <element signature="e#2537#2538#0" expanded="true" />
+            <element signature="e#2600#2601#0" expanded="true" />
             <element signature="method#run#0;class#summary#0" expanded="false" />
             <element signature="method#main#0;class#summary#0" expanded="false" />
           </folding>
@@ -1191,15 +1185,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/vforce/lei/summary.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5649547" vertical-offset="3496" max-vertical-offset="4158">
-          <caret line="255" column="13" selection-start-line="255" selection-start-column="13" selection-end-line="255" selection-end-column="13" />
+        <state vertical-scroll-proportion="-1.2507553" vertical-offset="1422" max-vertical-offset="3312">
+          <caret line="154" column="36" selection-start-line="154" selection-start-column="36" selection-end-line="154" selection-end-column="36" />
           <folding>
-            <element signature="class#1680:2001" expanded="false" />
-            <element signature="e#1778#1779#0" expanded="true" />
-            <element signature="e#1844#1845#0" expanded="true" />
-            <element signature="e#1923#1924#0" expanded="true" />
-            <element signature="e#1986#1987#0" expanded="true" />
-            <element signature="e#8632#8684#0" expanded="false" />
+            <element signature="class#mapper#0;class#summary#0" expanded="false" />
+            <element signature="e#2392#2393#0" expanded="true" />
+            <element signature="e#2458#2459#0" expanded="true" />
+            <element signature="e#2537#2538#0" expanded="true" />
+            <element signature="e#2600#2601#0" expanded="true" />
             <element signature="method#run#0;class#summary#0" expanded="false" />
             <element signature="method#main#0;class#summary#0" expanded="false" />
           </folding>
