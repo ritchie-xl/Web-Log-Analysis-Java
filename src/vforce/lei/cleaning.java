@@ -30,39 +30,39 @@ public class cleaning extends Configured implements Tool{
             String session = linkedHashMap.get("sessionID").toString();
 
             // Prepare the output key of mapper
-            String outputKey = user + "," + timeStamp + "," + session;
+            String outputKey = user + ","  + session;
 
             // Prepare the output value of mapper
-            String outputValue ="";
+            String outputValue;
             String type = linkedHashMap.get("type").toString();
             if(type.equals("Account") &&
                     linkedHashMap.get("subAction").toString().equals("parentalControls")){
-                outputValue = linkedHashMap.get("new").toString();
+                outputValue = "x:" + linkedHashMap.get("new").toString()+ ","+timeStamp;
                 output.collect(new Text(outputKey),new Text(outputValue));
             }else if(type.equals("Account")){
-                outputValue = linkedHashMap.get("subAction").toString();
+                outputValue = "c:"+linkedHashMap.get("subAction").toString()+ ","+timeStamp;
                 output.collect(new Text(outputKey),new Text(outputValue));
             }else if(type.equals("AddToQueue")){
-                outputValue = linkedHashMap.get("itemId").toString();
+                outputValue = "a:"+linkedHashMap.get("itemId").toString()+ ","+timeStamp;
                 output.collect(new Text(outputKey),new Text(outputValue));
             }else  if(type.equals("Home")){
-                outputValue = "," + linkedHashMap.get("popular").toString();
+                outputValue = "P:," + linkedHashMap.get("popular").toString()+ ","+timeStamp;
                 output.collect(new Text(outputKey),new Text(outputValue));
-                outputValue = "," + linkedHashMap.get("recommended").toString();
+                outputValue = "R:," + linkedHashMap.get("recommended").toString()+ ","+timeStamp;
                 output.collect(new Text(outputKey),new Text(outputValue));
-                outputValue = "," + linkedHashMap.get("recent").toString();
+                outputValue = "r:," + linkedHashMap.get("recent").toString()+ ","+timeStamp;
                 output.collect(new Text(outputKey),new Text(outputValue));
             }else  if(type.equals("Hover")){
-                outputValue = linkedHashMap.get("itemId").toString();
+                outputValue = "h:"+linkedHashMap.get("itemId").toString()+ ","+timeStamp;
                 output.collect(new Text(outputKey),new Text(outputValue));
             }else if(type.equals("ItemPage")){
-                outputValue = linkedHashMap.get("itemId").toString();
+                outputValue = "i:"+linkedHashMap.get("itemId").toString()+ ","+timeStamp;
                 output.collect(new Text(outputKey),new Text(outputValue));
             }else if(type.equals("Login")){
-                outputValue = "";
+                outputValue = "L:"+ ","+timeStamp;
                 output.collect(new Text(outputKey), new Text(outputValue));
             }else  if(type.equals("Logout")){
-                outputValue = "";
+                outputValue = "l:"+ ","+timeStamp;
                 output.collect(new Text(outputKey), new Text(outputValue));
             }else if(type.equals("Play") ||
                     type.equals("Pause") ||
@@ -72,34 +72,35 @@ public class cleaning extends Configured implements Tool{
                     type.equals("Resume")){
                 if(linkedHashMap.containsKey("payload") &&
                         linkedHashMap.get("payload").toString().length()>0){
-                    outputValue = linkedHashMap.get("marker").toString() + "," +
-                            linkedHashMap.get("itemId").toString();
+                    outputValue = "p:"+linkedHashMap.get("marker").toString() + "," +
+                            linkedHashMap.get("itemId").toString()+ ","+timeStamp;
                     output.collect(new Text(outputKey), new Text(outputValue));
                 }
             }else if(type.equals("Queue")){
-                outputValue = "";
+                outputValue = "q:"+ ","+timeStamp;
                 output.collect(new Text(outputKey), new Text(outputValue));
             }else if(type.equals("Rate")){
-                outputValue = linkedHashMap.get("itemId").toString() + "," +
-                        linkedHashMap.get("rating").toString();
+                outputValue = "t:"+linkedHashMap.get("itemId").toString() + "," +
+                        linkedHashMap.get("rating").toString()+ ","+timeStamp;
                 output.collect(new Text(outputKey), new Text(outputValue));
             }else if(type.equals("Recommendation")){
-                outputValue = linkedHashMap.get("recs").toString();
+                outputValue = "C:"+linkedHashMap.get("recs").toString()+ ","+timeStamp;
                 output.collect(new Text(outputKey), new Text(outputValue));
             }else if(type.equals("Search")){
-                outputValue = linkedHashMap.get("results").toString();
+                outputValue = "S:"+linkedHashMap.get("results").toString()+ ","+timeStamp;
                 output.collect(new Text(outputKey), new Text(outputValue));
             }else  if(type.equals("VerifyPassword")){
-                outputValue = "";
+                outputValue = "v:"+ ","+timeStamp;
                 output.collect(new Text(outputKey), new Text(outputValue));
             }else if(type.equals("WriteReview")){
-                outputValue = linkedHashMap.get("itemId").toString() + "," +
+                outputValue = "w:"+linkedHashMap.get("itemId").toString() + "," +
                         linkedHashMap.get("rating").toString() + "," +
-                        linkedHashMap.get("length").toString();
+                        linkedHashMap.get("length").toString() + ","+timeStamp;
                 output.collect(new Text(outputKey), new Text(outputValue));
-            }
-        }
 
+            }
+
+        }
     }
 
     public static class reducer extends MapReduceBase
