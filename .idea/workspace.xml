@@ -6,9 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bdaeacd-6bfb-4bc2-b873-3fafa0c3a050" name="Default" comment="rebuild cleaning.jar">
+    <list default="true" id="2bdaeacd-6bfb-4bc2-b873-3fafa0c3a050" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cleaning/cleaning.jar" afterPath="$PROJECT_DIR$/out/artifacts/cleaning/cleaning.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vforce/lei/cleaning.java" afterPath="$PROJECT_DIR$/src/vforce/lei/cleaning.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/json.java" afterPath="$PROJECT_DIR$/src/test/json.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/test.txt" afterPath="$PROJECT_DIR$/data/test.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Web-Log-Analysis-Java.iws" />
@@ -34,7 +36,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="summary.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="summary.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/vforce/lei/summary.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="2040" max-vertical-offset="2805">
@@ -67,8 +69,8 @@
       <file leaf-file-name="json.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/json.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
-              <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -89,8 +91,8 @@
       <file leaf-file-name="test.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/test.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
-              <caret line="0" column="37" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
+              <caret line="1" column="51" selection-start-line="1" selection-start-column="51" selection-end-line="1" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -116,14 +118,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cleaning.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="cleaning.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/vforce/lei/cleaning.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1005" max-vertical-offset="2355">
-              <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.38737446" vertical-offset="1005" max-vertical-offset="2340">
+              <caret line="85" column="35" selection-start-line="85" selection-start-column="35" selection-end-line="85" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="class#reducer#0;class#cleaning#0" expanded="false" />
                 <element signature="method#reduce#0;class#reducer#0;class#cleaning#0" expanded="false" />
                 <element signature="method#main#0;class#cleaning#0" expanded="false" />
               </folding>
@@ -157,6 +158,7 @@
         <option value="$PROJECT_DIR$/src/vforce/lei/json.java" />
         <option value="$PROJECT_DIR$/src/vforce/lei/summary.java" />
         <option value="$PROJECT_DIR$/src/vforce/lei/support.java" />
+        <option value="$PROJECT_DIR$/data/test.txt" />
         <option value="$PROJECT_DIR$/src/test/json.java" />
         <option value="$PROJECT_DIR$/src/vforce/lei/cleaning.java" />
       </list>
@@ -291,14 +293,6 @@
               <option name="myItemId" value="out" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="production" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Web-Log-Analysis-Java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -319,20 +313,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="cleaning" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Web-Log-Analysis-Java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Web-Log-Analysis-Java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -788,7 +768,13 @@
       <option name="project" value="LOCAL" />
       <updated>1420047171162</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="rebuild cleaning.jar">
+      <created>1420047531321</created>
+      <option name="number" value="00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1420047531321</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -913,7 +899,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#reducer#0;class#cleaning#0" expanded="false" />
             <element signature="method#reduce#0;class#reducer#0;class#cleaning#0" expanded="false" />
             <element signature="method#main#0;class#cleaning#0" expanded="false" />
           </folding>
@@ -1286,14 +1271,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/test.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
-          <caret line="0" column="37" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/vforce/lei/support.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="1470">
@@ -1308,27 +1285,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/json.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
-          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vforce/lei/cleaning.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1005" max-vertical-offset="2355">
-          <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#reducer#0;class#cleaning#0" expanded="false" />
-            <element signature="method#reduce#0;class#reducer#0;class#cleaning#0" expanded="false" />
-            <element signature="method#main#0;class#cleaning#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/vforce/lei/summary.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2270" max-vertical-offset="3366">
@@ -1337,6 +1293,34 @@
             <element signature="e#1560#1621#0" expanded="false" />
             <element signature="method#run#0;class#summary#0" expanded="false" />
             <element signature="method#main#0;class#summary#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
+          <caret line="1" column="51" selection-start-line="1" selection-start-column="51" selection-end-line="1" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/json.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vforce/lei/cleaning.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38737446" vertical-offset="1005" max-vertical-offset="2340">
+          <caret line="85" column="35" selection-start-line="85" selection-start-column="35" selection-end-line="85" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#reduce#0;class#reducer#0;class#cleaning#0" expanded="false" />
+            <element signature="method#main#0;class#cleaning#0" expanded="false" />
           </folding>
         </state>
       </provider>

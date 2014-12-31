@@ -37,7 +37,7 @@ public class cleaning extends Configured implements Tool{
             String outputKey = user + ","  + session;
 
             // Prepare the output value of mapper
-            String outputValue="";
+            String outputValue;
             String type = linkedHashMap.get("type").toString();
             if(type.equals("Account") &&
                     linkedHashMap.get("subAction").toString().equals("parentalControls")){
@@ -63,10 +63,10 @@ public class cleaning extends Configured implements Tool{
                 outputValue = "i:"+linkedHashMap.get("itemId").toString()+ ":"+timeStamp;
                 output.collect(new Text(outputKey),new Text(outputValue));
             }else if(type.equals("Login")){
-                outputValue = "L:"+ ":"+timeStamp;
+                outputValue = "L:"+timeStamp;
                 output.collect(new Text(outputKey), new Text(outputValue));
             }else  if(type.equals("Logout")){
-                outputValue = "l:"+ ":"+timeStamp;
+                outputValue = "l:"+timeStamp;
                 output.collect(new Text(outputKey), new Text(outputValue));
             }else if(type.equals("Play") ||
                     type.equals("Pause") ||
@@ -74,21 +74,16 @@ public class cleaning extends Configured implements Tool{
                     type.equals("Stop") ||
                     type.equals("Advance") ||
                     type.equals("Resume")){
-                if(linkedHashMap.containsKey("payload") && linkedHashMap.get("payload").toString().length() > 0){
-//                    System.out.println(linkedHashMap.get("marker").toString());
-                    if(linkedHashMap.get("marker") == null) {
-                        log.info(linkedHashMap);
+                if(linkedHashMap.containsKey("payload") && !linkedHashMap.get("payload").toString().equals("{}")){
 
-//                    log.info(linkedHashMap.get("marker").toString());
-//                    log.info(linkedHashMap.get("itemId").toString());
-                        outputValue = "p" + linkedHashMap;
-//                    outputValue = "p:"+linkedHashMap.get("marker").toString() + "," +
-//                            linkedHashMap.get("itemId").toString()+ ":"+timeStamp;
+                        log.info(linkedHashMap);
+                    outputValue = "p:"+linkedHashMap.get("marker").toString() + "," +
+                            linkedHashMap.get("itemId").toString()+ ":"+timeStamp;
                         output.collect(new Text(outputKey), new Text(outputValue));
-                    }
+
                 }
             }else if(type.equals("Queue")){
-                outputValue = "q:"+ ":"+timeStamp;
+                outputValue = "q:"+timeStamp;
                 output.collect(new Text(outputKey), new Text(outputValue));
             }else if(type.equals("Rate")){
                 outputValue = "t:"+linkedHashMap.get("itemId").toString() + "," +

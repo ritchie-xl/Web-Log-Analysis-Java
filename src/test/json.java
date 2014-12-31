@@ -20,13 +20,17 @@ public class json {
         BufferedReader reader = new BufferedReader(new FileReader(path));
 
         String line = reader.readLine();
+        line = reader.readLine();
 
         LinkedHashMap linkedHashMap = vforce.lei.support.readWithoutPrefix(line);
 
-        System.out.println(linkedHashMap);
+        System.out.println(linkedHashMap.get("payload"));
 
-        System.out.println(linkedHashMap.get("marker").toString());
-        System.out.println(linkedHashMap.get("itemId").toString());
+        if(linkedHashMap.get("payload").toString().equals("{}")){
+            System.out.println("payload is empty");
+        }
+//        System.out.println(linkedHashMap.get("marker").toString());
+//        System.out.println(linkedHashMap.get("itemId").toString());
 
         System.out.println(support.getSecond(linkedHashMap.get("createdAt").toString()));
 
