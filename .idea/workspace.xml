@@ -7,9 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bdaeacd-6bfb-4bc2-b873-3fafa0c3a050" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cleaning/cleaning.jar" afterPath="$PROJECT_DIR$/out/artifacts/cleaning/cleaning.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vforce/lei/cleaning.java" afterPath="$PROJECT_DIR$/src/vforce/lei/cleaning.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/json.java" afterPath="$PROJECT_DIR$/src/test/json.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Web-Log-Analysis-Java.iws" />
@@ -66,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="json.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="json.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/json.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43041608" vertical-offset="0" max-vertical-offset="1260">
-              <caret line="28" column="86" selection-start-line="28" selection-start-column="86" selection-end-line="28" selection-end-column="86" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="1260">
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -118,13 +116,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cleaning.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="cleaning.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/vforce/lei/cleaning.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="890" max-vertical-offset="2295">
-              <caret line="76" column="81" selection-start-line="76" selection-start-column="81" selection-end-line="76" selection-end-column="81" />
+            <state vertical-scroll-proportion="0.7058824" vertical-offset="948" max-vertical-offset="2175">
+              <caret line="96" column="78" selection-start-line="96" selection-start-column="69" selection-end-line="96" selection-end-column="78" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="class#reducer#0;class#cleaning#0" expanded="false" />
                 <element signature="method#reduce#0;class#reducer#0;class#cleaning#0" expanded="false" />
                 <element signature="method#main#0;class#cleaning#0" expanded="false" />
               </folding>
@@ -737,12 +736,18 @@
       <option name="project" value="LOCAL" />
       <updated>1420038628608</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="rebuild cleaning.jar">
+      <created>1420040051368</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1420040051368</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="804" y="23" width="1144" height="1173" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -763,7 +768,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19147006" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19147006" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3293247" sideWeight="0.49909255" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -862,6 +867,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="class#reducer#0;class#cleaning#0" expanded="false" />
             <element signature="method#reduce#0;class#reducer#0;class#cleaning#0" expanded="false" />
             <element signature="method#main#0;class#cleaning#0" expanded="false" />
           </folding>
@@ -1269,23 +1275,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vforce/lei/cleaning.java">
+    <entry file="file://$PROJECT_DIR$/src/test/json.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="890" max-vertical-offset="2295">
-          <caret line="76" column="81" selection-start-line="76" selection-start-column="81" selection-end-line="76" selection-end-column="81" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#reduce#0;class#reducer#0;class#cleaning#0" expanded="false" />
-            <element signature="method#main#0;class#cleaning#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="1260">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/json.java">
+    <entry file="file://$PROJECT_DIR$/src/vforce/lei/cleaning.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43041608" vertical-offset="0" max-vertical-offset="1260">
-          <caret line="28" column="86" selection-start-line="28" selection-start-column="86" selection-end-line="28" selection-end-column="86" />
-          <folding />
+        <state vertical-scroll-proportion="0.7058824" vertical-offset="948" max-vertical-offset="2175">
+          <caret line="96" column="78" selection-start-line="96" selection-start-column="69" selection-end-line="96" selection-end-column="78" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#reducer#0;class#cleaning#0" expanded="false" />
+            <element signature="method#reduce#0;class#reducer#0;class#cleaning#0" expanded="false" />
+            <element signature="method#main#0;class#cleaning#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
