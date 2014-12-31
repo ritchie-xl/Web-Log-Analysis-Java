@@ -23,6 +23,11 @@ public class json {
 
         LinkedHashMap linkedHashMap = vforce.lei.support.readWithoutPrefix(line);
 
+        System.out.println(linkedHashMap.get("marker").toString());
+        System.out.println(linkedHashMap.get("itemId").toString());
+
+        System.out.println(support.getSecond(linkedHashMap.get("createdAt").toString()));
+
         Iterator it = linkedHashMap.entrySet().iterator();
 
         while(it.hasNext()){

@@ -71,7 +71,10 @@ public class cleaning extends Configured implements Tool{
                     type.equals("Advance") ||
                     type.equals("Resume")){
                 if(linkedHashMap.containsKey("payload") &&
-                        linkedHashMap.get("payload").toString().length()>0){
+                        linkedHashMap.get("payload").getClass().equals(java.util.LinkedHashMap.class)){
+
+                    System.out.println("p:"+linkedHashMap.get("marker").toString() + "," +
+                            linkedHashMap.get("itemId").toString()+ ","+timeStamp);
                     outputValue = "p:"+linkedHashMap.get("marker").toString() + "," +
                             linkedHashMap.get("itemId").toString()+ ","+timeStamp;
                     output.collect(new Text(outputKey), new Text(outputValue));
