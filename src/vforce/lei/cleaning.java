@@ -88,7 +88,7 @@ public class cleaning extends Configured implements Tool{
                 outputValue = "t:"+linkedHashMap.get("itemId").toString() + "," +
                         linkedHashMap.get("rating").toString()+ ":"+timeStamp;
                 output.collect(new Text(outputKey), new Text(outputValue));
-            }else if(type.equals("Recommendation")){
+            }else if(type.equals("Recommendations")){
                 outputValue = "C:"+linkedHashMap.get("recs").toString()+ ":"+timeStamp;
                 output.collect(new Text(outputKey), new Text(outputValue));
             }else if(type.equals("Search")){

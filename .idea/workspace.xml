@@ -9,6 +9,8 @@
     <list default="true" id="2bdaeacd-6bfb-4bc2-b873-3fafa0c3a050" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cleaning/cleaning.jar" afterPath="$PROJECT_DIR$/out/artifacts/cleaning/cleaning.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vforce/lei/cleaning.java" afterPath="$PROJECT_DIR$/src/vforce/lei/cleaning.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/json.java" afterPath="$PROJECT_DIR$/src/test/json.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/test.txt" afterPath="$PROJECT_DIR$/data/test.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Web-Log-Analysis-Java.iws" />
@@ -67,11 +69,11 @@
       <file leaf-file-name="json.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/json.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
-              <caret line="36" column="85" selection-start-line="36" selection-start-column="85" selection-end-line="36" selection-end-column="85" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="192" max-vertical-offset="900">
+              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding>
                 <element signature="e#1058#1066#0" expanded="true" />
-                <element signature="e#1374#1382#0" expanded="true" />
+                <element signature="e#1386#1394#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -92,8 +94,8 @@
       <file leaf-file-name="test.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/test.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
-              <caret line="0" column="481" selection-start-line="0" selection-start-column="481" selection-end-line="0" selection-end-column="481" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="90">
+              <caret line="0" column="634" selection-start-line="0" selection-start-column="634" selection-end-line="0" selection-end-column="634" />
               <folding />
             </state>
           </provider>
@@ -122,24 +124,24 @@
       <file leaf-file-name="cleaning.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/vforce/lei/cleaning.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.75877196" vertical-offset="2661" max-vertical-offset="3810">
-              <caret line="212" column="38" selection-start-line="212" selection-start-column="38" selection-end-line="212" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.627193" vertical-offset="1116" max-vertical-offset="3810">
+              <caret line="103" column="28" selection-start-line="103" selection-start-column="28" selection-end-line="103" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6194#6202#0" expanded="true" />
-                <element signature="e#6269#6277#0" expanded="true" />
-                <element signature="e#6345#6353#0" expanded="true" />
-                <element signature="e#6413#6421#0" expanded="true" />
-                <element signature="e#6483#6491#0" expanded="true" />
-                <element signature="e#6554#6562#0" expanded="true" />
-                <element signature="e#6633#6641#0" expanded="true" />
-                <element signature="e#6714#6722#0" expanded="true" />
-                <element signature="e#6794#6810#0" expanded="true" />
-                <element signature="e#6881#6897#0" expanded="true" />
-                <element signature="e#7014#7053#0" expanded="true" />
-                <element signature="e#7105#7113#0" expanded="true" />
-                <element signature="e#7312#7320#0" expanded="true" />
-                <element signature="e#10394#10410#0" expanded="true" />
+                <element signature="e#6195#6203#0" expanded="true" />
+                <element signature="e#6270#6278#0" expanded="true" />
+                <element signature="e#6346#6354#0" expanded="true" />
+                <element signature="e#6414#6422#0" expanded="true" />
+                <element signature="e#6484#6492#0" expanded="true" />
+                <element signature="e#6555#6563#0" expanded="true" />
+                <element signature="e#6634#6642#0" expanded="true" />
+                <element signature="e#6715#6723#0" expanded="true" />
+                <element signature="e#6795#6811#0" expanded="true" />
+                <element signature="e#6882#6898#0" expanded="true" />
+                <element signature="e#7015#7054#0" expanded="true" />
+                <element signature="e#7106#7114#0" expanded="true" />
+                <element signature="e#7313#7321#0" expanded="true" />
+                <element signature="e#10395#10411#0" expanded="true" />
                 <element signature="method#run#0;class#cleaning#0" expanded="false" />
                 <element signature="method#main#0;class#cleaning#0" expanded="false" />
               </folding>
@@ -801,7 +803,13 @@
       <option name="project" value="LOCAL" />
       <updated>1420059904091</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="rebuild cleaning, fix problem">
+      <created>1420060882118</created>
+      <option name="number" value="00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1420060882118</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -820,7 +828,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3293247" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295238" sideWeight="0.49864253" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293247" sideWeight="0.49818513" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -867,7 +875,8 @@
     <MESSAGE value="rebuild cleaning.jar" />
     <MESSAGE value="fix the payload is empty leading to null exception problem" />
     <MESSAGE value="commit the reduce part of the clean program" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit the reduce part of the clean program" />
+    <MESSAGE value="rebuild cleaning, fix problem" />
+    <option name="LAST_COMMIT_MESSAGE" value="rebuild cleaning, fix problem" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -886,7 +895,7 @@
           <caret line="29" column="86" selection-start-line="29" selection-start-column="86" selection-end-line="29" selection-end-column="86" />
           <folding>
             <element signature="e#1058#1066#0" expanded="true" />
-            <element signature="e#1374#1382#0" expanded="true" />
+            <element signature="e#1386#1394#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -931,20 +940,20 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6194#6202#0" expanded="true" />
-            <element signature="e#6269#6277#0" expanded="true" />
-            <element signature="e#6345#6353#0" expanded="true" />
-            <element signature="e#6413#6421#0" expanded="true" />
-            <element signature="e#6483#6491#0" expanded="true" />
-            <element signature="e#6554#6562#0" expanded="true" />
-            <element signature="e#6633#6641#0" expanded="true" />
-            <element signature="e#6714#6722#0" expanded="true" />
-            <element signature="e#6794#6810#0" expanded="true" />
-            <element signature="e#6881#6897#0" expanded="true" />
-            <element signature="e#7014#7053#0" expanded="true" />
-            <element signature="e#7105#7113#0" expanded="true" />
-            <element signature="e#7312#7320#0" expanded="true" />
-            <element signature="e#10394#10410#0" expanded="true" />
+            <element signature="e#6195#6203#0" expanded="true" />
+            <element signature="e#6270#6278#0" expanded="true" />
+            <element signature="e#6346#6354#0" expanded="true" />
+            <element signature="e#6414#6422#0" expanded="true" />
+            <element signature="e#6484#6492#0" expanded="true" />
+            <element signature="e#6555#6563#0" expanded="true" />
+            <element signature="e#6634#6642#0" expanded="true" />
+            <element signature="e#6715#6723#0" expanded="true" />
+            <element signature="e#6795#6811#0" expanded="true" />
+            <element signature="e#6882#6898#0" expanded="true" />
+            <element signature="e#7015#7054#0" expanded="true" />
+            <element signature="e#7106#7114#0" expanded="true" />
+            <element signature="e#7313#7321#0" expanded="true" />
+            <element signature="e#10395#10411#0" expanded="true" />
             <element signature="method#run#0;class#cleaning#0" expanded="false" />
             <element signature="method#main#0;class#cleaning#0" expanded="false" />
           </folding>
@@ -1343,45 +1352,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/json.java">
+    <entry file="file://$PROJECT_DIR$/data/test.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
-          <caret line="36" column="85" selection-start-line="36" selection-start-column="85" selection-end-line="36" selection-end-column="85" />
-          <folding>
-            <element signature="e#1058#1066#0" expanded="true" />
-            <element signature="e#1374#1382#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
+          <caret line="0" column="634" selection-start-line="0" selection-start-column="634" selection-end-line="0" selection-end-column="634" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/test.txt">
+    <entry file="file://$PROJECT_DIR$/src/test/json.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
-          <caret line="0" column="481" selection-start-line="0" selection-start-column="481" selection-end-line="0" selection-end-column="481" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="192" max-vertical-offset="900">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="e#1058#1066#0" expanded="true" />
+            <element signature="e#1386#1394#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/vforce/lei/cleaning.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75877196" vertical-offset="2661" max-vertical-offset="3810">
-          <caret line="212" column="38" selection-start-line="212" selection-start-column="38" selection-end-line="212" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.627193" vertical-offset="1116" max-vertical-offset="3810">
+          <caret line="103" column="28" selection-start-line="103" selection-start-column="28" selection-end-line="103" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6194#6202#0" expanded="true" />
-            <element signature="e#6269#6277#0" expanded="true" />
-            <element signature="e#6345#6353#0" expanded="true" />
-            <element signature="e#6413#6421#0" expanded="true" />
-            <element signature="e#6483#6491#0" expanded="true" />
-            <element signature="e#6554#6562#0" expanded="true" />
-            <element signature="e#6633#6641#0" expanded="true" />
-            <element signature="e#6714#6722#0" expanded="true" />
-            <element signature="e#6794#6810#0" expanded="true" />
-            <element signature="e#6881#6897#0" expanded="true" />
-            <element signature="e#7014#7053#0" expanded="true" />
-            <element signature="e#7105#7113#0" expanded="true" />
-            <element signature="e#7312#7320#0" expanded="true" />
-            <element signature="e#10394#10410#0" expanded="true" />
+            <element signature="e#6195#6203#0" expanded="true" />
+            <element signature="e#6270#6278#0" expanded="true" />
+            <element signature="e#6346#6354#0" expanded="true" />
+            <element signature="e#6414#6422#0" expanded="true" />
+            <element signature="e#6484#6492#0" expanded="true" />
+            <element signature="e#6555#6563#0" expanded="true" />
+            <element signature="e#6634#6642#0" expanded="true" />
+            <element signature="e#6715#6723#0" expanded="true" />
+            <element signature="e#6795#6811#0" expanded="true" />
+            <element signature="e#6882#6898#0" expanded="true" />
+            <element signature="e#7015#7054#0" expanded="true" />
+            <element signature="e#7106#7114#0" expanded="true" />
+            <element signature="e#7313#7321#0" expanded="true" />
+            <element signature="e#10395#10411#0" expanded="true" />
             <element signature="method#run#0;class#cleaning#0" expanded="false" />
             <element signature="method#main#0;class#cleaning#0" expanded="false" />
           </folding>

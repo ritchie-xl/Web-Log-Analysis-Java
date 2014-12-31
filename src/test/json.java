@@ -33,13 +33,13 @@ public class json {
 
         List<String> l = new ArrayList<String>();
 
-        String payloadStr = linkedHashMap.get("popular").toString();
-        String[] payload = payloadStr.substring(1, payloadStr.length()-1).split(",");
+//        String payloadStr = linkedHashMap.get("popular").toString();
+//        String[] payload = payloadStr.substring(1, payloadStr.length()-1).split(",");
 
-        for(String i:payload){
-            l.add(i);
-        }
-        System.out.println(l.toString());
+//        for(String i:payload){
+//            l.add(i);
+//        }
+//        System.out.println(l.toString());
 
         List<String> resc = new ArrayList<String>();
         resc.add("fdsaf");
