@@ -149,32 +149,25 @@ public class cleaning extends Configured implements Tool{
                 if (flag == 'C'){
                     String[] payload = value[1].substring(1, value[1].length()-1).split(",");
                     for(String i: payload){
-                        if(!recommendations.contains(i)){
-                            recommendations.add(i);
-                        }
+                        recommendations.add(i);
                     }
                 }else if(flag == 'L'){
                     actions.add("login");
                 }else  if(flag == 'P'){
                     String[] payload = value[1].substring(1, value[1].length()-1).split(",");
                     for(String i:payload){
-                        if(!popular.contains(i)){
-                            popular.add(i);
-                        }
+                        popular.add(i);
                     }
                 }else  if(flag == 'R'){
                     String[] payload = value[1].substring(1, value[1].length()-1).split(",");
                     for(String i:payload){
-                        if(!recommended.contains(i)){
-                            recommended.add(i);
-                        }
+                        recommended.add(i);
                     }
                 }else if(flag == 'S'){
                     String[] payload = value[1].substring(1, value[1].length()-1).split(",");
                     for(String i:payload){
-                        if(!searched.contains(i)){
-                            searched.add(i);
-                        }
+                        searched.add(i);
+
                     }
                 }else if(flag == 'a'){
                     String payload = value[1];
@@ -183,20 +176,14 @@ public class cleaning extends Configured implements Tool{
                     }
                 }else if(flag == 'c'){
                     String payload = value[1];
-                    if(!actions.contains(payload)){
-                        actions.add(payload);
-                        linkedHashMap.put("kid",false);
-                    }
+                    actions.add(payload);
+                    linkedHashMap.put("kid",false);
                 }else if(flag == 'h'){
                     String payload = value[1];
-                    if(!hover.contains(payload)){
-                        hover.add(payload);
-                    }
+                    hover.add(payload);
                 }else if(flag == 'i'){
                     String payload = value[1];
-                    if(!browsed.contains(payload)){
-                        browsed.add(payload);
-                    }
+                    browsed.add(payload);
                 }else if(flag == 'l'){
                     actions.add("logout");
                 }else if(flag == 'p'){
@@ -207,9 +194,7 @@ public class cleaning extends Configured implements Tool{
                 }else if(flag == 'r'){
                     String[] payload = value[1].substring(1, value[1].length()-1).split(",");
                     for(String i:payload){
-                        if(!recent.contains(i)){
-                            recent.add(i);
-                        }
+                        recent.add(i);
                     }
                 }else if(flag == 't'){
                     String[] payload = value[1].split(",");
