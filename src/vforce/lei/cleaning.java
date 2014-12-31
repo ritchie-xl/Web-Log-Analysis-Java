@@ -33,7 +33,7 @@ public class cleaning extends Configured implements Tool{
             String outputKey = user + ","  + session;
 
             // Prepare the output value of mapper
-            String outputValue;
+            String outputValue="";
             String type = linkedHashMap.get("type").toString();
             if(type.equals("Account") &&
                     linkedHashMap.get("subAction").toString().equals("parentalControls")){
