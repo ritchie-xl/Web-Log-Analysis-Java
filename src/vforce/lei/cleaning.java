@@ -1,5 +1,7 @@
 package vforce.lei;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.FileStatus;
@@ -19,6 +21,8 @@ public class cleaning extends Configured implements Tool{
 
     public static class mapper extends MapReduceBase
         implements Mapper<LongWritable, Text, Text, Text>{
+
+        public static final Log log = LogFactory.getLog(mapper.class);
 
         public void map(LongWritable key, Text value, OutputCollector<Text, Text>output,
                         Reporter reporter) throws IOException{
@@ -71,8 +75,13 @@ public class cleaning extends Configured implements Tool{
                     type.equals("Advance") ||
                     type.equals("Resume")){
                 if(linkedHashMap.containsKey("payload") && linkedHashMap.get("payload").toString().length() > 0){
-                    outputValue = "p:"+linkedHashMap.get("marker").toString() + "," +
-                            linkedHashMap.get("itemId").toString()+ ":"+timeStamp;
+//                    System.out.println(linkedHashMap.get("marker").toString());
+                    log.info(linkedHashMap);
+//                    log.info(linkedHashMap.get("marker").toString());
+//                    log.info(linkedHashMap.get("itemId").toString());
+                    outputValue = "p" + linkedHashMap;
+//                    outputValue = "p:"+linkedHashMap.get("marker").toString() + "," +
+//                            linkedHashMap.get("itemId").toString()+ ":"+timeStamp;
                     output.collect(new Text(outputKey), new Text(outputValue));
                 }
             }else if(type.equals("Queue")){

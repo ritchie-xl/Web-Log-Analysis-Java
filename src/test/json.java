@@ -23,6 +23,8 @@ public class json {
 
         LinkedHashMap linkedHashMap = vforce.lei.support.readWithoutPrefix(line);
 
+        System.out.println(linkedHashMap);
+
         System.out.println(linkedHashMap.get("marker").toString());
         System.out.println(linkedHashMap.get("itemId").toString());
 
@@ -34,53 +36,6 @@ public class json {
             Map.Entry me = (Map.Entry)it.next();
             System.out.println(me.getKey().toString() + ":" + me.getValue().toString());
         }
-
-//        JSONParser parser = new JSONParser();
-//
-//        ContainerFactory containerFactory = new ContainerFactory() {
-//            public Map createObjectContainer() {
-//                return new LinkedHashMap();
-//            }
-//
-//            public List creatArrayContainer() {
-//                return new LinkedList();
-//            }
-//        };
-//
-//        try{
-//            Map json = (Map)parser.parse(line, containerFactory);
-//            String user = json.get("user").toString();
-//            String session = json.get("session_id").toString();
-//            String time = json.get("created_at").toString();
-//            Long timeSec = support.getSecond(time);
-//            String key = user+","+timeSec+","+session;
-//            System.out.println(key);
-//
-//            Iterator it = json.entrySet().iterator();
-//            while(it.hasNext()){
-//                Map.Entry me = (Map.Entry)it.next();
-//                System.out.println(me.getKey() + " : " + me.getValue());
-//            }
-//
-//        }catch(ParseException e){
-//            e.printStackTrace();
-//        }
-
-
-//        LinkedHashMap linkedHashMap = vforce.lei.json.readWithPrefix(line);
-//        Iterator it = linkedHashMap.entrySet().iterator();
-//
-//        String userId = linkedHashMap.get("user").toString();
-//        String sessionId = linkedHashMap.get("sessionID").toString();
-//        String time = linkedHashMap.get("createdAt").toString();
-//
-//        String key = userId + "," +time+","+sessionId;
-//        System.out.println(key);
-//
-//        while(it.hasNext()){
-//            Map.Entry me = (Map.Entry)it.next();
-//            System.out.println(me.getKey().toString()+ " : " + me.getValue().toString());
-//        }
 
     }
 }
