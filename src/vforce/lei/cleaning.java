@@ -134,8 +134,6 @@ public class cleaning extends Configured implements Tool{
             String session = identifier[1];
 
             List<String> time = new ArrayList<String>();
-
-            String startTime;
             String lastTime="";
 
             while(values.hasNext()){
@@ -210,11 +208,9 @@ public class cleaning extends Configured implements Tool{
                     reviewed.put(payload[0],itemId);
                 }
                 else if(flag == 'x'){
-                    linkedHashMap.put("kid",(value[1].equals("kid")));
+                    linkedHashMap.put("kid",!(value[1].equals("kid")));
                     linkedHashMap.put("end",timestamp);
-
-                    String outputKey = linkedHashMap.toString();
-                    output.collect(new Text(outputKey), null);
+                    break;
                 }
             }
 
