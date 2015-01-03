@@ -10,6 +10,8 @@ import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
+import org.apache.hadoop.io.compress.CompressionCodec;
+import org.apache.hadoop.io.compress.GzipCodec;
 import org.apache.hadoop.mapred.*;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
@@ -179,6 +181,7 @@ public class cleaning extends Configured implements Tool{
                     String payload = value[1];
                     actions.add(payload);
                     linkedHashMap.put("kid",false);
+                    jsonObject.put("kid",false);
                 }else if(flag == 'h'){
                     String payload = value[1];
                     hover.add(payload);
@@ -203,6 +206,7 @@ public class cleaning extends Configured implements Tool{
                 }else if(flag == 'v'){
                     actions.add("verifiedPassword");
                     linkedHashMap.put("kid",false);
+                    jsonObject.put("kid",false);
                 }else if(flag =='w'){
                     String[] payload = value[1].split(",");
                     LinkedHashMap<String, String> itemId = new LinkedHashMap<String, String>();
@@ -213,6 +217,8 @@ public class cleaning extends Configured implements Tool{
                 else if(flag == 'x'){
                     linkedHashMap.put("kid",!(value[1].equals("kid")));
                     linkedHashMap.put("end",timestamp);
+                    jsonObject.put("kid",!(value[1].equals("kid")));
+                    jsonObject.put("end",timestamp);
                     break;
                 }
             }
@@ -285,6 +291,10 @@ public class cleaning extends Configured implements Tool{
             }
         }
         FileOutputFormat.setOutputPath(jobConf, new Path(args[2]));
+
+        // Set Compression type of the mapreduce job
+//        jobConf.setBoolean("mapred.output.compress", true);
+//        jobConf.setClass("mapred.output.compression.codec", GzipCodec.class, CompressionCodec.class);
 
         JobClient.runJob(jobConf);
         return 0;
