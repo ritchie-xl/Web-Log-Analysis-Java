@@ -13,6 +13,7 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapred.*;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
+import org.json.simple.JSONObject;
 
 import java.io.IOException;
 import java.util.*;
@@ -112,6 +113,8 @@ public class cleaning extends Configured implements Tool{
 
         public void reduce(Text key, Iterator<Text> values,
                            OutputCollector<Text,NullWritable>output, Reporter reporter) throws IOException {
+
+            JSONObject jsonObject = new JSONObject();
 
             LinkedHashMap linkedHashMap = new LinkedHashMap();
             // List for recommendations
@@ -233,7 +236,26 @@ public class cleaning extends Configured implements Tool{
             linkedHashMap.put("rated",rated);
             linkedHashMap.put("reviewed",reviewed);
 
-            String outputKey = linkedHashMap.toString();
+
+            jsonObject.put("start",time.get(0));
+            jsonObject.put("userId",userId);
+            jsonObject.put("session",session);
+            jsonObject.put("end",lastTime);
+            jsonObject.put("recommendations",recommendations);
+            jsonObject.put("actions",actions);
+            jsonObject.put("popular",popular);
+            jsonObject.put("recommended",recommended);
+            jsonObject.put("searched",searched);
+            jsonObject.put("queued",queued);
+            jsonObject.put("hover",hover);
+            jsonObject.put("browsed",browsed);
+            jsonObject.put("played",played);
+            jsonObject.put("recent",recent);
+            jsonObject.put("rated",rated);
+            jsonObject.put("reviewed",reviewed);
+
+//            String outputKey = linkedHashMap.toString();
+            String outputKey = jsonObject.toJSONString();
             output.collect(new Text(outputKey), null);
         }
     }
