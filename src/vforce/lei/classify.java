@@ -45,8 +45,8 @@ public class classify extends Configured implements Tool{
             try {
                 Map json = (Map) jsonParser.parse(value.toString(), containerFactory);
                 Set played = ((LinkedHashMap) json.get("played")).keySet();
-                Set rated = ((LinkedHashMap) json.get("played")).keySet();
-                Set reviewed = ((LinkedHashMap) json.get("played")).keySet();
+                Set rated = ((LinkedHashMap) json.get("rated")).keySet();
+                Set reviewed = ((LinkedHashMap) json.get("reviewed")).keySet();
 
 
                 Set items = new TreeSet();
@@ -54,7 +54,7 @@ public class classify extends Configured implements Tool{
                 items.addAll(rated);
                 items.addAll(reviewed);
 
-                outputKey = json.get("user") + "," + json.get("start") + "," + json.get("end");
+                outputKey = json.get("userId") + "," + json.get("start") + "," + json.get("end");
                 outputValue = json.get("kid") + "," + items.toString();
 
                 output.collect(new Text(outputKey), new Text(outputValue));

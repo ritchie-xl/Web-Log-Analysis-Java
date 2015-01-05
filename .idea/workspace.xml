@@ -6,16 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bdaeacd-6bfb-4bc2-b873-3fafa0c3a050" name="Default" comment="add the commons-logging library for log purpost">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/classify/Web-Log-Analysis-Java.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/classify.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Web-Log-Analysis-Java/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/out/production/Web-Log-Analysis-Java/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+    <list default="true" id="2bdaeacd-6bfb-4bc2-b873-3fafa0c3a050" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/classify/Web-Log-Analysis-Java.jar" afterPath="$PROJECT_DIR$/out/artifacts/classify/Web-Log-Analysis-Java.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vforce/lei/classify.java" afterPath="$PROJECT_DIR$/src/vforce/lei/classify.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vforce/lei/cleaning.java" afterPath="$PROJECT_DIR$/src/vforce/lei/cleaning.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/json.java" afterPath="$PROJECT_DIR$/src/test/json.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vforce/lei/support.java" afterPath="$PROJECT_DIR$/src/vforce/lei/support.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/test.txt" afterPath="$PROJECT_DIR$/data/test.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Web-Log-Analysis-Java.iws" />
@@ -140,12 +133,12 @@
       <file leaf-file-name="classify.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/vforce/lei/classify.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35123968" vertical-offset="255" max-vertical-offset="1140">
-              <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.71900827" vertical-offset="168" max-vertical-offset="1500">
+              <caret line="56" column="44" selection-start-line="56" selection-start-column="44" selection-end-line="56" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="class#mapper#0;class#classify#0" expanded="false" />
                 <element signature="class#1074:1395" expanded="false" />
+                <element signature="class#reducer#0;class#classify#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -884,12 +877,18 @@
       <option name="project" value="LOCAL" />
       <updated>1420303541515</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="add the classfier code">
+      <created>1420480049062</created>
+      <option name="number" value="00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1420480049062</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="852" y="23" width="1068" height="1173" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -910,7 +909,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37621832" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37621832" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293247" sideWeight="0.49902534" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -953,7 +952,8 @@
     <MESSAGE value="rebuild cleaning, fix problem" />
     <MESSAGE value="modify the output key of cleaning to be json string" />
     <MESSAGE value="add the commons-logging library for log purpost" />
-    <option name="LAST_COMMIT_MESSAGE" value="add the commons-logging library for log purpost" />
+    <MESSAGE value="add the classfier code" />
+    <option name="LAST_COMMIT_MESSAGE" value="add the classfier code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1433,12 +1433,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/vforce/lei/classify.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35123968" vertical-offset="255" max-vertical-offset="1140">
-          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.71900827" vertical-offset="168" max-vertical-offset="1500">
+          <caret line="56" column="44" selection-start-line="56" selection-start-column="44" selection-end-line="56" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#mapper#0;class#classify#0" expanded="false" />
             <element signature="class#1074:1395" expanded="false" />
+            <element signature="class#reducer#0;class#classify#0" expanded="false" />
           </folding>
         </state>
       </provider>
