@@ -35,7 +35,7 @@ public class cleaning extends Configured implements Tool{
             String session = linkedHashMap.get("sessionID").toString();
 
             // Prepare the output key of mapper
-            String outputKey = user + ","  + session;
+            String outputKey = user + ","  + session;//+","+timeStamp;
 
             // Prepare the output value of mapper
             String outputValue;
@@ -104,137 +104,160 @@ public class cleaning extends Configured implements Tool{
                         linkedHashMap.get("length").toString() + ":"+timeStamp;
                 output.collect(new Text(outputKey), new Text(outputValue));
             }
-
-        }
-    }
-    public static class reducer extends MapReduceBase
-            implements Reducer<Text, Text, Text,Text>{
-
-        public void reduce(Text key, Iterator<Text> values,
-                           OutputCollector<Text,Text>output, Reporter reporter) throws IOException {
-
-            while(values.hasNext()){
-                output.collect(key,values.next());
-            }
-
         }
     }
 
 //    public static class reducer extends MapReduceBase
-//        implements Reducer<Text, Text, Text,NullWritable>{
+//            implements Reducer<Text, Text, Text,Text>{
 //
 //        public void reduce(Text key, Iterator<Text> values,
-//                           OutputCollector<Text,NullWritable>output, Reporter reporter) throws IOException {
-//
-//            JSONObject jsonObject = new JSONObject();
-//
-//            LinkedHashMap linkedHashMap = new LinkedHashMap();
-//            // List for recommendations
-//            List<String> popular = new ArrayList<String>(); // Popular
-//            List<String> recommended = new ArrayList<String>(); // recommended
-//            List<String> searched = new ArrayList<String>(); // search
-//            List<String> hover = new ArrayList<String>();   // hover
-//            List<String> queued = new ArrayList<String>();  // queued
-//            List<String> browsed = new ArrayList<String>(); // browsed
-//            List<String> recommendations = new ArrayList<String>();    // recommendations
-//            List<String> recent = new ArrayList<String>();
-//            LinkedHashMap<String, String> played = new LinkedHashMap<String, String>();
-//            LinkedHashMap<String, String> rated = new LinkedHashMap<String, String>();
-//            LinkedHashMap<String, LinkedHashMap<String, String>> reviewed =
-//                    new LinkedHashMap<String, LinkedHashMap<String, String>>();
-//            List<String> actions = new ArrayList<String>();
-//
-//            String[] identifier = key.toString().split(",");
-//            String userId = identifier[0];
-//            String session = identifier[1];
-//
-//            List<String> time = new ArrayList<String>();
-//            String lastTime="";
+//                           OutputCollector<Text,Text>output, Reporter reporter) throws IOException {
 //
 //            while(values.hasNext()){
-//
-//                String[] value = values.next().toString().split(":");
-//                String timestamp = value[value.length-1];
-//                char flag = value[0].charAt(0);
-//                lastTime = timestamp;
-//                time.add(timestamp);
-//
-//                if (flag == 'C'){
-//                    String[] payload = value[1].substring(1, value[1].length()-1).split(",");
-//                    for(String i: payload){
-//                        recommendations.add(i);
-//                    }
-//                }else if(flag == 'L'){
-//                    actions.add("login");
-//                }else  if(flag == 'P'){
-//                    String[] payload = value[1].substring(1, value[1].length()-1).split(",");
-//                    for(String i:payload){
-//                        popular.add(i);
-//                    }
-//                }else  if(flag == 'R'){
-//                    String[] payload = value[1].substring(1, value[1].length()-1).split(",");
-//                    for(String i:payload){
-//                        recommended.add(i);
-//                    }
-//                }else if(flag == 'S'){
-//                    String[] payload = value[1].substring(1, value[1].length()-1).split(",");
-//                    for(String i:payload){
-//                        searched.add(i);
-//
-//                    }
-//                }else if(flag == 'a'){
-//                    String payload = value[1];
-//                    if(!queued.contains(payload)){
-//                        queued.add(payload);
-//                    }
-//                }else if(flag == 'c'){
-//                    String payload = value[1];
-//                    actions.add(payload);
-//                    linkedHashMap.put("kid",false);
-//                    jsonObject.put("kid",false);
-//                }else if(flag == 'h'){
-//                    String payload = value[1];
-//                    hover.add(payload);
-//                }else if(flag == 'i'){
-//                    String payload = value[1];
-//                    browsed.add(payload);
-//                }else if(flag == 'l'){
-//                    actions.add("logout");
-//                }else if(flag == 'p'){
-//                    String[] payload = value[1].split(",");
-//                    played.put(payload[1],payload[0]);
-//                }else if(flag == 'q'){
-//                    actions.add("reviewedQueue");
-//                }else if(flag == 'r'){
-//                    String[] payload = value[1].substring(1, value[1].length()-1).split(",");
-//                    for(String i:payload){
-//                        recent.add(i);
-//                    }
-//                }else if(flag == 't'){
-//                    String[] payload = value[1].split(",");
-//                    rated.put(payload[0],payload[1]);
-//                }else if(flag == 'v'){
-//                    actions.add("verifiedPassword");
-//                    linkedHashMap.put("kid",false);
-//                    jsonObject.put("kid",false);
-//                }else if(flag =='w'){
-//                    String[] payload = value[1].split(",");
-//                    LinkedHashMap<String, String> itemId = new LinkedHashMap<String, String>();
-//                    itemId.put("rating",payload[1]);
-//                    itemId.put("length",payload[2]);
-//                    reviewed.put(payload[0],itemId);
-//                }
-//                else if(flag == 'x'){
-//                    linkedHashMap.put("kid",!(value[1].equals("kid")));
-//                    linkedHashMap.put("end",timestamp);
-//                    jsonObject.put("kid",!(value[1].equals("kid")));
-//                    jsonObject.put("end",timestamp);
-//                    break;
-//                }
+//                output.collect(key,values.next());
 //            }
 //
-//            Collections.sort(time);
-//
+//        }
+//    }
+
+    public static class reducer extends MapReduceBase
+        implements Reducer<Text, Text, Text,NullWritable>{
+
+        public void reduce(Text key, Iterator<Text> values,
+                           OutputCollector<Text,NullWritable>output, Reporter reporter) throws IOException {
+
+            JSONObject jsonObject = new JSONObject();
+
+            LinkedHashMap linkedHashMap = new LinkedHashMap();
+            // List for recommendations
+            List<String> popular = new ArrayList<String>(); // Popular
+            List<String> recommended = new ArrayList<String>(); // recommended
+            List<String> searched = new ArrayList<String>(); // search
+            List<String> hover = new ArrayList<String>();   // hover
+            List<String> queued = new ArrayList<String>();  // queued
+            List<String> browsed = new ArrayList<String>(); // browsed
+            List<String> recommendations = new ArrayList<String>();    // recommendations
+            List<String> recent = new ArrayList<String>();
+            LinkedHashMap<String, String> played = new LinkedHashMap<String, String>();
+            LinkedHashMap<String, String> rated = new LinkedHashMap<String, String>();
+            LinkedHashMap<String, LinkedHashMap<String, String>> reviewed =
+                    new LinkedHashMap<String, LinkedHashMap<String, String>>();
+            List<String> actions = new ArrayList<String>();
+
+            String[] identifier = key.toString().split(",");
+            String userId = identifier[0];
+            String session = identifier[1];
+            //String timeStr = identifier[2];
+
+            List<String> time = new ArrayList<String>();
+            String lastTime="";
+
+            while(values.hasNext()){
+
+                String[] value = values.next().toString().split(":");
+                String timestamp = value[value.length-1];
+                char flag = value[0].charAt(0);
+                lastTime = timestamp;
+                time.add(timestamp);
+
+                if (flag == 'C'){
+                    String[] payload = value[1].substring(1, value[1].length()-1).split(",");
+                    for(String i: payload){
+                        recommendations.add(i);
+                    }
+                }else if(flag == 'L'){
+                    actions.add("login");
+                }else  if(flag == 'P'){
+                    String[] payload = value[1].substring(1, value[1].length()-1).split(",");
+                    for(String i:payload){
+                        popular.add(i);
+                    }
+                }else  if(flag == 'R'){
+                    String[] payload = value[1].substring(1, value[1].length()-1).split(",");
+                    for(String i:payload){
+                        recommended.add(i);
+                    }
+                }else if(flag == 'S'){
+                    String[] payload = value[1].substring(1, value[1].length()-1).split(",");
+                    for(String i:payload){
+                        searched.add(i);
+
+                    }
+                }else if(flag == 'a'){
+                    String payload = value[1];
+                    if(!queued.contains(payload)){
+                        queued.add(payload);
+                    }
+                }else if(flag == 'c'){
+                    String payload = value[1];
+                    actions.add(payload);
+                    linkedHashMap.put("kid",false);
+                    jsonObject.put("kid",false);
+                }else if(flag == 'h'){
+                    String payload = value[1];
+                    hover.add(payload);
+                }else if(flag == 'i'){
+                    String payload = value[1];
+                    browsed.add(payload);
+                }else if(flag == 'l'){
+                    actions.add("logout");
+                }else if(flag == 'p'){
+                    String[] payload = value[1].split(",");
+                    played.put(payload[1],payload[0]);
+                }else if(flag == 'q'){
+                    actions.add("reviewedQueue");
+                }else if(flag == 'r'){
+                    String[] payload = value[1].substring(1, value[1].length()-1).split(",");
+                    for(String i:payload){
+                        recent.add(i);
+                    }
+                }else if(flag == 't'){
+                    String[] payload = value[1].split(",");
+                    rated.put(payload[0],payload[1]);
+                }else if(flag == 'v'){
+                    actions.add("verifiedPassword");
+                    linkedHashMap.put("kid",false);
+                    jsonObject.put("kid",false);
+                }else if(flag =='w'){
+                    String[] payload = value[1].split(",");
+                    LinkedHashMap<String, String> itemId = new LinkedHashMap<String, String>();
+                    itemId.put("rating",payload[1]);
+                    itemId.put("length",payload[2]);
+                    reviewed.put(payload[0],itemId);
+                }
+                else if(flag == 'x'){
+                    linkedHashMap.put("kid",!(value[1].equals("kid")));
+                    linkedHashMap.put("end",timestamp);
+                    jsonObject.put("kid",!(value[1].equals("kid")));
+                    jsonObject.put("end",timestamp);
+
+                    jsonObject.put("start",time.get(0));
+                    jsonObject.put("userId",userId);
+                    jsonObject.put("session",session);
+                    jsonObject.put("end",lastTime);
+                    jsonObject.put("recommendations",recommendations);
+                    jsonObject.put("actions",actions);
+                    jsonObject.put("popular",popular);
+                    jsonObject.put("recommended",recommended);
+                    jsonObject.put("searched",searched);
+                    jsonObject.put("queued",queued);
+                    jsonObject.put("hover",hover);
+                    jsonObject.put("browsed",browsed);
+                    jsonObject.put("played",played);
+                    jsonObject.put("recent",recent);
+                    jsonObject.put("rated",rated);
+                    jsonObject.put("reviewed",reviewed);
+
+//            String outputKey = linkedHashMap.toString();
+                    String outputKey = jsonObject.toJSONString();
+                    output.collect(new Text(outputKey), null);
+
+                    break;
+                }
+            }
+
+            Collections.sort(time);
+
 //            linkedHashMap.put("start",time.get(0));
 //            linkedHashMap.put("userId",userId);
 //            linkedHashMap.put("session",session);
@@ -251,33 +274,29 @@ public class cleaning extends Configured implements Tool{
 //            linkedHashMap.put("recent",recent);
 //            linkedHashMap.put("rated",rated);
 //            linkedHashMap.put("reviewed",reviewed);
-//
-//
-//            jsonObject.put("start",time.get(0));
-//            jsonObject.put("userId",userId);
-//            jsonObject.put("session",session);
-//            jsonObject.put("end",lastTime);
-//            jsonObject.put("recommendations",recommendations);
-//            jsonObject.put("actions",actions);
-//            jsonObject.put("popular",popular);
-//            jsonObject.put("recommended",recommended);
-//            jsonObject.put("searched",searched);
-//            jsonObject.put("queued",queued);
-//            jsonObject.put("hover",hover);
-//            jsonObject.put("browsed",browsed);
-//            jsonObject.put("played",played);
-//            jsonObject.put("recent",recent);
-//            jsonObject.put("rated",rated);
-//            jsonObject.put("reviewed",reviewed);
-//            if(jsonObject.get("kid") == null){
-//                jsonObject.put("kid", null);
-//            }
-//
-////            String outputKey = linkedHashMap.toString();
-//            String outputKey = jsonObject.toJSONString();
-//            output.collect(new Text(outputKey), null);
-//        }
-//    }
+
+            jsonObject.put("start",time.get(0));
+            jsonObject.put("userId",userId);
+            jsonObject.put("session",session);
+            jsonObject.put("end",lastTime);
+            jsonObject.put("recommendations",recommendations);
+            jsonObject.put("actions",actions);
+            jsonObject.put("popular",popular);
+            jsonObject.put("recommended",recommended);
+            jsonObject.put("searched",searched);
+            jsonObject.put("queued",queued);
+            jsonObject.put("hover",hover);
+            jsonObject.put("browsed",browsed);
+            jsonObject.put("played",played);
+            jsonObject.put("recent",recent);
+            jsonObject.put("rated",rated);
+            jsonObject.put("reviewed",reviewed);
+
+//            String outputKey = linkedHashMap.toString();
+            String outputKey = jsonObject.toJSONString();
+            output.collect(new Text(outputKey), null);
+        }
+    }
 
     public int run(String[] args) throws IOException {
         Configuration conf = getConf();
