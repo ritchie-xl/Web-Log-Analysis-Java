@@ -258,7 +258,7 @@ public class cleaning extends Configured implements Tool{
             jsonObject.put("rated",rated);
             jsonObject.put("reviewed",reviewed);
             if(jsonObject.get("kid") == null){
-                jsonObject.put(("Kid"),true);
+                jsonObject.put(("kid"),true);
             }
 
 //            String outputKey = linkedHashMap.toString();
