@@ -80,9 +80,9 @@ public class json {
 
             Set played = ((LinkedHashMap)json.get("played")).keySet();
             System.out.println(played.toString());
-            Set rated = ((LinkedHashMap)json.get("played")).keySet();
+            Set rated = ((LinkedHashMap)json.get("rated")).keySet();
             System.out.println(rated.toString());
-            Set reviewed = ((LinkedHashMap)json.get("played")).keySet();
+            Set reviewed = ((LinkedHashMap)json.get("reviewed")).keySet();
             System.out.println(reviewed.toString());
 
             Set retVal = new TreeSet();
@@ -91,6 +91,15 @@ public class json {
             retVal.addAll(reviewed);
 
             System.out.println(retVal.toString());
+
+            String ret = retVal.toString();
+            String[] terms = ret.substring(1,ret.length()-1).split(", ");
+            Set result = new TreeSet();
+
+            for(String i:terms){
+                result.add(i);
+            }
+            System.out.println(result.toString());
 
 //            while (it.hasNext()) {
 //                Map.Entry m1 = (Map.Entry) it.next();

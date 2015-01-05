@@ -54,8 +54,8 @@ public class classify extends Configured implements Tool{
                 items.addAll(rated);
                 items.addAll(reviewed);
 
-                outputKey = json.get("userId") + "," + json.get("start") + "," + json.get("end");
-                outputValue = json.get("kid") + "," + items.toString();
+                outputKey = json.get("userId").toString(); // + "," + json.get("start") + "," + json.get("end");
+                outputValue = json.get("kid") + ":" + items.toString();
 
                 output.collect(new Text(outputKey), new Text(outputValue));
             } catch (ParseException e) {
@@ -70,6 +70,22 @@ public class classify extends Configured implements Tool{
         public void reduce(Text key, Iterator<Text> values, OutputCollector<Text, Text> output, Reporter reporter) throws IOException {
 
             while(values.hasNext()){
+
+                String user = key.toString();
+                //String start = keys[1];
+                //String end = keys[2];
+
+                String value = values.toString();
+                String[] terms = value.substring(1,value.length()-1).split(":");
+                boolean kid = Boolean.valueOf(terms[0]);
+                String[] i = terms[1].substring(1,terms[1].length()-1).split(",");
+                Set items = new TreeSet();
+                for(String item: i){
+                    items.add(item);
+                }
+
+
+
                 output.collect(key,values.next());
             }
         }
@@ -77,7 +93,7 @@ public class classify extends Configured implements Tool{
 
     public int run(String[] args) throws Exception {
             Configuration conf = getConf();
-            JobConf jobConf = new JobConf(conf, summary.class);
+            JobConf jobConf = new JobConf(conf, classify.class);
             jobConf.setJobName("classify");
 
             jobConf.setMapOutputKeyClass(Text.class);
