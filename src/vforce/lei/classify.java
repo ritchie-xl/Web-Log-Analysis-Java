@@ -5,20 +5,73 @@ import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.FileStatus;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapred.*;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
+import org.json.simple.parser.ContainerFactory;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
+import java.util.*;
 
 public class classify extends Configured implements Tool{
 
-    public static class mapper extends MapReduceBase implements Mapper {
+    public static class mapper extends MapReduceBase
+            implements Mapper<LongWritable,Text,Text,Text> {
+        public void map(LongWritable key, Text value, OutputCollector output, Reporter reporter)
+                throws IOException {
 
+            String outputKey;
+            String outputValue;
+            JSONParser jsonParser = new JSONParser();
+
+            ContainerFactory containerFactory = new ContainerFactory() {
+                @Override
+                public Map createObjectContainer() {
+                    return new LinkedHashMap();
+                }
+
+                @Override
+                public List creatArrayContainer() {
+                    return new LinkedList();
+                }
+            };
+
+            // After parsing the json string, the result will be saved into a map, then
+            // the program can traverse the map to get each key: value pair
+            try {
+                Map json = (Map) jsonParser.parse(value.toString(), containerFactory);
+                Set played = ((LinkedHashMap) json.get("played")).keySet();
+                Set rated = ((LinkedHashMap) json.get("played")).keySet();
+                Set reviewed = ((LinkedHashMap) json.get("played")).keySet();
+
+
+                Set items = new TreeSet();
+                items.addAll(played);
+                items.addAll(rated);
+                items.addAll(reviewed);
+
+                outputKey = json.get("user") + "," + json.get("start") + "," + json.get("end");
+                outputValue = json.get("kid") + "," + items.toString();
+
+                output.collect(new Text(outputKey), new Text(outputValue));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static class reducer extends MapReduceBase
+            implements Reducer<Text, Text, Text, Text>{
         @Override
-        public void map(Object o, Object o2, OutputCollector outputCollector, Reporter reporter) throws IOException {
+        public void reduce(Text key, Iterator<Text> values, OutputCollector<Text, Text> output, Reporter reporter) throws IOException {
 
+            while(values.hasNext()){
+                output.collect(key,values.next());
+            }
         }
     }
 
@@ -32,8 +85,8 @@ public class classify extends Configured implements Tool{
             jobConf.setOutputKeyClass(Text.class);
             jobConf.setOutputValueClass(Text.class);
 
-            jobConf.setMapperClass(vforce.lei.cleaning.mapper.class);
-            jobConf.setReducerClass(vforce.lei.cleaning.reducer.class);
+            jobConf.setMapperClass(vforce.lei.classify.mapper.class);
+            jobConf.setReducerClass(vforce.lei.classify.reducer.class);
 
             jobConf.setInputFormat(TextInputFormat.class);
             jobConf.setOutputFormat(TextOutputFormat.class);

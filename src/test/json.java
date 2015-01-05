@@ -14,7 +14,7 @@ import java.util.*;
  * Created by ritchie on 12/22/14.
  */
 public class json {
-    public static void main(String[] args) throws IOException{
+    public static void test(String[] args) throws IOException{
         String path = "data/test.txt";
 
         BufferedReader reader = new BufferedReader(new FileReader(path));
@@ -22,40 +22,110 @@ public class json {
         String line = reader.readLine();
 
         LinkedHashMap linkedHashMap = vforce.lei.support.readWithoutPrefix(line);
-//        System.out.println(linkedHashMap.get("marker").toString());
-//        System.out.println(linkedHashMap.get("itemId").toString());
-
-//        System.out.println(support.getSecond(linkedHashMap.get("createdAt").toString()));
 
         Iterator it = linkedHashMap.entrySet().iterator();
 
-        System.out.println(("1370882147021").compareTo("1370882207034"));
-
-        List<String> l = new ArrayList<String>();
-
-//        String payloadStr = linkedHashMap.get("popular").toString();
-//        String[] payload = payloadStr.substring(1, payloadStr.length()-1).split(",");
-
-//        for(String i:payload){
-//            l.add(i);
+//        List<String> l = new ArrayList<String>();
+//
+//        List<String> resc = new ArrayList<String>();
+//        resc.add("fdsaf");
+//        resc.add("fsdfdsf");
+//        System.out.println(resc);
+//
+//        String a = "C";
+//        char b = a.charAt(0);
+//        if(b == 'C'){
+//            System.out.println(b);
+//            System.out.println("True");
 //        }
-//        System.out.println(l.toString());
 
-        List<String> resc = new ArrayList<String>();
-        resc.add("fdsaf");
-        resc.add("fsdfdsf");
-        System.out.println(resc);
+//        LinkedHashMap played = (LinkedHashMap)linkedHashMap.get("played");
 
-        String a = "C";
-        char b = a.charAt(0);
-        if(b == 'C'){
-            System.out.println(b);
-            System.out.println("True");
-        }
 
         while(it.hasNext()){
             Map.Entry me = (Map.Entry)it.next();
             System.out.println(me.getKey().toString() + ":" + me.getValue().toString());
+        }
+
+    }
+
+    public static void main(String[] args) throws IOException{
+
+        String path = "data/test.txt";
+
+        BufferedReader reader = new BufferedReader(new FileReader(path));
+
+        String line = reader.readLine();
+
+        // Utilize the simple-json to parse all the json file
+        JSONParser jsonParser = new JSONParser();
+
+        ContainerFactory containerFactory = new ContainerFactory() {
+            @Override
+            public Map createObjectContainer() {
+                return new LinkedHashMap();
+            }
+
+            @Override
+            public List creatArrayContainer() {
+                return new LinkedList();
+            }
+        };
+
+        // After parsing the json string, the result will be saved into a map, then
+        // the program can traverse the map to get each key: value pair
+        try {
+            Map json = (Map) jsonParser.parse(line, containerFactory);
+            Iterator it = json.entrySet().iterator();
+
+            Set played = ((LinkedHashMap)json.get("played")).keySet();
+            System.out.println(played.toString());
+            Set rated = ((LinkedHashMap)json.get("played")).keySet();
+            System.out.println(rated.toString());
+            Set reviewed = ((LinkedHashMap)json.get("played")).keySet();
+            System.out.println(reviewed.toString());
+
+            Set retVal = new TreeSet();
+            retVal.addAll(played);
+            retVal.addAll(rated);
+            retVal.addAll(reviewed);
+
+            System.out.println(retVal.toString());
+
+//            while (it.hasNext()) {
+//                Map.Entry m1 = (Map.Entry) it.next();
+//                String field = m1.getKey().toString();
+//
+//                // If the key is the type then collect the type as key and "HEAD"
+//                // as value in the mapper
+//                if (field.equals("type")) {
+//                    retVal.put(field, m1.getValue().toString());
+//                }else{
+//                    // Read all the subfields
+//                    if (m1.getValue().getClass().equals
+//                            (java.util.LinkedHashMap.class)) {
+//                        retVal.put(m1.getKey().toString(),m1.getValue().toString());
+//                        LinkedHashMap l = (LinkedHashMap) m1.getValue();
+//                        Iterator i = l.entrySet().iterator();
+//                        while (i.hasNext()) {
+//                            Map.Entry m2 = (Map.Entry) i.next();
+//                            String subField = m2.getKey().toString();
+//
+//                            String key = subField;
+//                            String value = m2.getValue().toString();
+//                            retVal.put(key, value);
+//                        }
+//                    } else {
+//                        // Handle the values don't have subfields
+//                        //                        String key = json.get("type") + ":" + field;
+//                        String key = field;
+//                        String value = m1.getValue().toString();
+//                        retVal.put(key, value);
+//                    }
+//                }
+//            }
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
 
     }
