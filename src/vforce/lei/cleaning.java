@@ -10,8 +10,6 @@ import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.io.compress.CompressionCodec;
-import org.apache.hadoop.io.compress.GzipCodec;
 import org.apache.hadoop.mapred.*;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
@@ -32,7 +30,13 @@ public class cleaning extends Configured implements Tool{
 
             String line = value.toString();
             LinkedHashMap linkedHashMap = support.readWithoutPrefix(line);
-            String user = linkedHashMap.get("user").toString();
+            String user="";
+            try{
+                user = linkedHashMap.get("user").toString();
+            }catch (NullPointerException e){
+                log.info(value);
+            }
+
             Long timeStamp = support.getSecond(linkedHashMap.get("createdAt").toString());
             String session = linkedHashMap.get("sessionID").toString();
 

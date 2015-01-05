@@ -14,7 +14,7 @@ import java.util.*;
  * Created by ritchie on 12/22/14.
  */
 public class json {
-    public static void test(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException{
         String path = "data/test.txt";
 
         BufferedReader reader = new BufferedReader(new FileReader(path));
@@ -49,7 +49,7 @@ public class json {
 
     }
 
-    public static void main(String[] args) throws IOException{
+    public static void test(String[] args) throws IOException{
 
         String path = "data/test.txt";
 
