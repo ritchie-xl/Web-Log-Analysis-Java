@@ -8,6 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2bdaeacd-6bfb-4bc2-b873-3fafa0c3a050" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cleaning/cleaning.jar" afterPath="$PROJECT_DIR$/out/artifacts/cleaning/cleaning.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vforce/lei/cleaning.java" afterPath="$PROJECT_DIR$/src/vforce/lei/cleaning.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Web-Log-Analysis-Java.iws" />
@@ -119,8 +120,8 @@
       <file leaf-file-name="cleaning.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/vforce/lei/cleaning.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6198347" vertical-offset="225" max-vertical-offset="4755">
-              <caret line="45" column="41" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.41322315" vertical-offset="225" max-vertical-offset="4770">
+              <caret line="35" column="19" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -540,7 +541,7 @@
     </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/classify/Web-Log-Analysis-Java.jar" />
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/cleaning/cleaning.jar" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <envs />
       <method />
@@ -939,12 +940,18 @@
       <option name="project" value="LOCAL" />
       <updated>1420482490275</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="rebuild cleaning.jar">
+      <created>1420482599005</created>
+      <option name="number" value="00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1420482599005</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="852" y="23" width="1068" height="1173" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -965,7 +972,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37621832" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37621832" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293247" sideWeight="0.49902534" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1002,7 +1009,6 @@
     <MESSAGE value="Finish the summary MapReduce Program" />
     <MESSAGE value="Add comments" />
     <MESSAGE value="Finish the summary and the mapper for cleaning" />
-    <MESSAGE value="rebuild cleaning.jar" />
     <MESSAGE value="fix the payload is empty leading to null exception problem" />
     <MESSAGE value="commit the reduce part of the clean program" />
     <MESSAGE value="rebuild cleaning, fix problem" />
@@ -1012,7 +1018,8 @@
     <MESSAGE value="fix the userId" />
     <MESSAGE value="fix the kid is null" />
     <MESSAGE value="rebuild cleaning&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="rebuild cleaning&#10;" />
+    <MESSAGE value="rebuild cleaning.jar" />
+    <option name="LAST_COMMIT_MESSAGE" value="rebuild cleaning.jar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1459,19 +1466,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vforce/lei/support.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="864" max-vertical-offset="1590">
-          <caret line="170" column="25" selection-start-line="170" selection-start-column="25" selection-end-line="170" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#readWithPrefix#0;class#support#0" expanded="false" />
-            <element signature="e#1296#1371#0" expanded="false" />
-            <element signature="method#getSecond#0;class#support#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/json.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1800">
@@ -1490,10 +1484,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/vforce/lei/support.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1590">
+          <caret line="170" column="25" selection-start-line="170" selection-start-column="25" selection-end-line="170" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#readWithPrefix#0;class#support#0" expanded="false" />
+            <element signature="e#1296#1371#0" expanded="false" />
+            <element signature="method#getSecond#0;class#support#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/vforce/lei/cleaning.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6198347" vertical-offset="225" max-vertical-offset="4755">
-          <caret line="45" column="41" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.41322315" vertical-offset="225" max-vertical-offset="4770">
+          <caret line="35" column="19" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

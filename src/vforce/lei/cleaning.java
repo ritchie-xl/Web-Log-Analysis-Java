@@ -34,6 +34,7 @@ public class cleaning extends Configured implements Tool{
             try{
                 user = linkedHashMap.get("user").toString();
             }catch (NullPointerException e){
+                log.info(value);
                 log.info(linkedHashMap.toString());
             }
 
