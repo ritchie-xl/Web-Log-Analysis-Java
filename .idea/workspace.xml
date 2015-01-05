@@ -8,8 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2bdaeacd-6bfb-4bc2-b873-3fafa0c3a050" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cleaning/cleaning.jar" afterPath="$PROJECT_DIR$/out/artifacts/cleaning/cleaning.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Web-Log-Analysis-Java/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/out/production/Web-Log-Analysis-Java/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vforce/lei/cleaning.java" afterPath="$PROJECT_DIR$/src/vforce/lei/cleaning.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Web-Log-Analysis-Java.iws" />
@@ -121,11 +120,10 @@
       <file leaf-file-name="cleaning.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/vforce/lei/cleaning.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5165289" vertical-offset="3510" max-vertical-offset="4710">
-              <caret line="259" column="30" selection-start-line="259" selection-start-column="30" selection-end-line="259" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.25619835" vertical-offset="3984" max-vertical-offset="4710">
+              <caret line="278" column="0" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#main#0;class#cleaning#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -896,7 +894,13 @@
       <option name="project" value="LOCAL" />
       <updated>1420480587977</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="rebuild cleaning&#10;">
+      <created>1420480799895</created>
+      <option name="number" value="00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1420480799895</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -968,7 +972,8 @@
     <MESSAGE value="add the classfier code" />
     <MESSAGE value="fix the userId" />
     <MESSAGE value="fix the kid is null" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix the kid is null" />
+    <MESSAGE value="rebuild cleaning&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="rebuild cleaning&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1021,7 +1026,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#cleaning#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1449,11 +1453,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/vforce/lei/cleaning.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5165289" vertical-offset="3510" max-vertical-offset="4710">
-          <caret line="259" column="30" selection-start-line="259" selection-start-column="30" selection-end-line="259" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.25619835" vertical-offset="3984" max-vertical-offset="4710">
+          <caret line="278" column="0" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#cleaning#0" expanded="false" />
           </folding>
         </state>
       </provider>
