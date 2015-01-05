@@ -252,6 +252,8 @@ public class cleaning extends Configured implements Tool{
                     String outputKey = jsonObject.toJSONString();
                     output.collect(new Text(outputKey), null);
 
+                    jsonObject.put("kid", value[1] == "kid");
+
                     break;
                 }
             }
