@@ -9,8 +9,6 @@
     <list default="true" id="2bdaeacd-6bfb-4bc2-b873-3fafa0c3a050" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cleaning/cleaning.jar" afterPath="$PROJECT_DIR$/out/artifacts/cleaning/cleaning.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vforce/lei/cleaning.java" afterPath="$PROJECT_DIR$/src/vforce/lei/cleaning.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/json.java" afterPath="$PROJECT_DIR$/src/test/json.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/test.txt" afterPath="$PROJECT_DIR$/data/test.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Web-Log-Analysis-Java.iws" />
@@ -123,7 +121,7 @@
         <entry file="file://$PROJECT_DIR$/src/vforce/lei/cleaning.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.6198347" vertical-offset="225" max-vertical-offset="4755">
-              <caret line="45" column="49" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
+              <caret line="45" column="41" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -930,7 +928,13 @@
       <option name="project" value="LOCAL" />
       <updated>1420481412355</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="rebuild cleaning&#10;">
+      <created>1420482272130</created>
+      <option name="number" value="00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1420482272130</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1484,7 +1488,7 @@
     <entry file="file://$PROJECT_DIR$/src/vforce/lei/cleaning.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6198347" vertical-offset="225" max-vertical-offset="4755">
-          <caret line="45" column="49" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
+          <caret line="45" column="41" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
