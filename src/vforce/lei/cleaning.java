@@ -30,14 +30,7 @@ public class cleaning extends Configured implements Tool{
 
             String line = value.toString();
             LinkedHashMap linkedHashMap = support.readWithoutPrefix(line);
-            String user="";
-            try{
-                user = linkedHashMap.get("user").toString();
-            }catch (NullPointerException e){
-                log.info(value);
-                log.info(linkedHashMap.toString());
-            }
-
+            String user=linkedHashMap.get("user").toString();
             Long timeStamp = support.getSecond(linkedHashMap.get("createdAt").toString());
             String session = linkedHashMap.get("sessionID").toString();
 
@@ -264,6 +257,9 @@ public class cleaning extends Configured implements Tool{
             jsonObject.put("recent",recent);
             jsonObject.put("rated",rated);
             jsonObject.put("reviewed",reviewed);
+            if(jsonObject.get("kid") == null){
+                jsonObject.put(("Kid"),true);
+            }
 
 //            String outputKey = linkedHashMap.toString();
             String outputKey = jsonObject.toJSONString();
