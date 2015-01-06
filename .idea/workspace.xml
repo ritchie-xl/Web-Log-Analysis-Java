@@ -8,8 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2bdaeacd-6bfb-4bc2-b873-3fafa0c3a050" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cleaning/cleaning.jar" afterPath="$PROJECT_DIR$/out/artifacts/cleaning/cleaning.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web-Log-Analysis-Java.iml" afterPath="$PROJECT_DIR$/Web-Log-Analysis-Java.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vforce/lei/classify.java" afterPath="$PROJECT_DIR$/src/vforce/lei/classify.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vforce/lei/cleaning.java" afterPath="$PROJECT_DIR$/src/vforce/lei/cleaning.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/json.java" afterPath="$PROJECT_DIR$/src/test/json.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Web-Log-Analysis-Java.iws" />
@@ -62,12 +63,37 @@
       <file leaf-file-name="cleaning.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/vforce/lei/cleaning.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4357224" vertical-offset="3082" max-vertical-offset="4815">
-              <caret line="242" column="32" selection-start-line="242" selection-start-column="32" selection-end-line="242" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.5044843" vertical-offset="3390" max-vertical-offset="4950">
+              <caret line="256" column="40" selection-start-line="256" selection-start-column="40" selection-end-line="256" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5809#5864#0" expanded="false" />
-                <element signature="e#12755#12808#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="json.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/json.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="293" max-vertical-offset="1995">
+              <caret line="43" column="135" selection-start-line="43" selection-start-column="119" selection-end-line="43" selection-end-column="135" />
+              <folding>
+                <element signature="class#1941:2226" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="support.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/vforce/lei/support.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="698" max-vertical-offset="1590">
+              <caret line="143" column="53" selection-start-line="143" selection-start-column="53" selection-end-line="143" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#readWithPrefix#0;class#support#0" expanded="false" />
+                <element signature="e#1296#1371#0" expanded="false" />
+                <element signature="method#getSecond#0;class#support#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -86,8 +112,8 @@
       <file leaf-file-name="classify.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/vforce/lei/classify.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="753" max-vertical-offset="1860">
-              <caret line="95" column="56" selection-start-line="95" selection-start-column="56" selection-end-line="95" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="348" max-vertical-offset="1815">
+              <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="class#1074:1395" expanded="false" />
@@ -122,18 +148,18 @@
         <option value="$PROJECT_DIR$/src/vforce/lei/json.java" />
         <option value="$PROJECT_DIR$/src/vforce/lei/summary.java" />
         <option value="$PROJECT_DIR$/src/vforce/lei/support.java" />
-        <option value="$PROJECT_DIR$/src/vforce/lei/classify.java" />
         <option value="$PROJECT_DIR$/data/test.txt" />
-        <option value="$PROJECT_DIR$/src/test/json.java" />
         <option value="$PROJECT_DIR$/src/test/test.py" />
+        <option value="$PROJECT_DIR$/src/vforce/lei/classify.java" />
+        <option value="$PROJECT_DIR$/src/test/json.java" />
         <option value="$PROJECT_DIR$/src/vforce/lei/cleaning.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="852" />
+    <option name="x" value="306" />
     <option name="y" value="23" />
-    <option name="width" value="1068" />
+    <option name="width" value="1614" />
     <option name="height" value="1173" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -162,6 +188,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -302,38 +330,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Web-Log-Analysis-Java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Web-Log-Analysis-Java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Web-Log-Analysis-Java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Web-Log-Analysis-Java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -764,12 +762,6 @@
       <option name="number" value="Default" />
       <updated>1419281488601</updated>
     </task>
-    <task id="LOCAL-00001" summary="commit the summary mapreduce program">
-      <created>1419289523671</created>
-      <option name="number" value="00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1419289523671</updated>
-    </task>
     <task id="LOCAL-00002" summary="Merge branch 'master' of https://github.com/ritchie-xl/Web-Log-Analysis-Java&#10;&#10;Conflicts:&#10;&#9;src/json.java&#10;">
       <created>1419290717127</created>
       <option name="number" value="00002" />
@@ -1058,11 +1050,17 @@
       <option name="project" value="LOCAL" />
       <updated>1420495862780</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="rebuild cleaning.jar">
+      <created>1420496408282</created>
+      <option name="number" value="00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1420496408282</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="852" y="23" width="1068" height="1173" extended-state="0" />
+    <frame x="306" y="23" width="1614" height="1173" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1081,9 +1079,9 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17153996" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293247" sideWeight="0.49902534" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17111959" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293247" sideWeight="0.49872774" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295238" sideWeight="0.4995475" order="1" side_tool="false" content_ui="tabs" />
@@ -1172,8 +1170,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5809#5864#0" expanded="false" />
-            <element signature="e#12755#12808#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1513,42 +1509,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vforce/lei/classify.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="753" max-vertical-offset="1860">
-          <caret line="95" column="56" selection-start-line="95" selection-start-column="56" selection-end-line="95" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#1074:1395" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vforce/lei/support.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="441" max-vertical-offset="1590">
-          <caret line="143" column="53" selection-start-line="143" selection-start-column="53" selection-end-line="143" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#readWithPrefix#0;class#support#0" expanded="false" />
-            <element signature="e#1296#1371#0" expanded="false" />
-            <element signature="method#getSecond#0;class#support#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/test.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="686">
           <caret line="0" column="340" selection-start-line="0" selection-start-column="340" selection-end-line="0" selection-end-column="340" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/json.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1935">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1572,14 +1537,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vforce/lei/cleaning.java">
+    <entry file="file://$PROJECT_DIR$/src/vforce/lei/support.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4357224" vertical-offset="3082" max-vertical-offset="4815">
-          <caret line="242" column="32" selection-start-line="242" selection-start-column="32" selection-end-line="242" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="441" max-vertical-offset="1590">
+          <caret line="143" column="53" selection-start-line="143" selection-start-column="53" selection-end-line="143" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5809#5864#0" expanded="false" />
-            <element signature="e#12755#12808#0" expanded="false" />
+            <element signature="method#readWithPrefix#0;class#support#0" expanded="false" />
+            <element signature="e#1296#1371#0" expanded="false" />
+            <element signature="method#getSecond#0;class#support#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/json.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="293" max-vertical-offset="1995">
+          <caret line="43" column="135" selection-start-line="43" selection-start-column="119" selection-end-line="43" selection-end-column="135" />
+          <folding>
+            <element signature="class#1941:2226" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vforce/lei/classify.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="348" max-vertical-offset="1815">
+          <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#1074:1395" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vforce/lei/cleaning.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5044843" vertical-offset="3390" max-vertical-offset="4950">
+          <caret line="256" column="40" selection-start-line="256" selection-start-column="40" selection-end-line="256" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

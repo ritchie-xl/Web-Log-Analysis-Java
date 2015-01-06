@@ -231,23 +231,6 @@ public class cleaning extends Configured implements Tool{
                     jsonObject.put("kid",!(value[1].equals("kid")));
                     jsonObject.put("end",timestamp);
 
-                    jsonObject.put("start",time.get(0));
-                    jsonObject.put("userId",userId);
-                    jsonObject.put("session",session);
-                    jsonObject.put("end",lastTime);
-                    jsonObject.put("recommendations",recommendations);
-                    jsonObject.put("actions",actions);
-                    jsonObject.put("popular",popular);
-                    jsonObject.put("recommended",recommended);
-                    jsonObject.put("searched",searched);
-                    jsonObject.put("queued",queued);
-                    jsonObject.put("hover",hover);
-                    jsonObject.put("browsed",browsed);
-                    jsonObject.put("played",played);
-                    jsonObject.put("recent",recent);
-                    jsonObject.put("rated",rated);
-                    jsonObject.put("reviewed",reviewed);
-
 //            String outputKey = linkedHashMap.toString();
                     String outputKey = jsonObject.toJSONString();
                     output.collect(new Text(outputKey), null);

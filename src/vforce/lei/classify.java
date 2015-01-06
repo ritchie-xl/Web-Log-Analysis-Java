@@ -83,9 +83,6 @@ public class classify extends Configured implements Tool{
                 for(String item: i){
                     items.add(item);
                 }
-
-
-
                 output.collect(key,values.next());
             }
         }

@@ -41,6 +41,10 @@ public class json {
 
 //        LinkedHashMap played = (LinkedHashMap)linkedHashMap.get("played");
 
+        if(linkedHashMap.get("type").toString().equals("Account") && linkedHashMap.get("subAction").toString().equals("parentalControls")){
+
+            System.out.println("The flag is X");
+        }
 
         while(it.hasNext()){
             Map.Entry me = (Map.Entry)it.next();
