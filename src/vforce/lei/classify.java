@@ -24,8 +24,8 @@ public class classify extends Configured implements Tool{
         public void map(LongWritable key, Text value, OutputCollector output, Reporter reporter)
                 throws IOException {
 
-            String outputKey;
-            String outputValue;
+            Text outputKey = new Text();
+            Text outputValue = new Text();
             JSONParser jsonParser = new JSONParser();
 
             ContainerFactory containerFactory = new ContainerFactory() {
@@ -54,10 +54,10 @@ public class classify extends Configured implements Tool{
                 items.addAll(rated);
                 items.addAll(reviewed);
 
-                outputKey = json.get("userId").toString(); // + "," + json.get("start") + "," + json.get("end");
-                outputValue = json.get("kid") + ":" + items.toString();
+                outputKey.set(json.get("userId").toString());
+                outputValue.set(json.get("kid") + ":" + items.toString());
 
-                output.collect(new Text(outputKey), new Text(outputValue));
+                output.collect(outputKey, outputValue);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
@@ -71,7 +71,7 @@ public class classify extends Configured implements Tool{
 
             while(values.hasNext()){
 
-                String user = key.toString();
+                /*String user = key.toString();
                 //String start = keys[1];
                 //String end = keys[2];
 
@@ -82,7 +82,7 @@ public class classify extends Configured implements Tool{
                 Set items = new TreeSet();
                 for(String item: i){
                     items.add(item);
-                }
+                }*/
                 output.collect(key,values.next());
             }
         }

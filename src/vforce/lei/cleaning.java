@@ -107,19 +107,6 @@ public class cleaning extends Configured implements Tool{
         }
     }
 
-//    public static class reducer extends MapReduceBase
-//            implements Reducer<Text, Text, Text,Text>{
-//
-//        public void reduce(Text key, Iterator<Text> values,
-//                           OutputCollector<Text,Text>output, Reporter reporter) throws IOException {
-//
-//            while(values.hasNext()){
-//                output.collect(key,values.next());
-//            }
-//
-//        }
-//    }
-
     public static class reducer extends MapReduceBase
         implements Reducer<Text, Text, Text,NullWritable>{
 
@@ -228,37 +215,37 @@ public class cleaning extends Configured implements Tool{
                 else if(flag == 'x'){
                     linkedHashMap.put("kid",!(value[1].equals("kid")));
                     linkedHashMap.put("end",timestamp);
-                    jsonObject.put("kid",!(value[1].equals("kid")));
+//                    jsonObject.put("kid",!(value[1].equals("kid")));
                     jsonObject.put("end",timestamp);
 
 //            String outputKey = linkedHashMap.toString();
-                    String outputKey = jsonObject.toJSONString();
-                    output.collect(new Text(outputKey), null);
-
-                    jsonObject.put("kid", value[1] == "kid");
-
-                    break;
+                    jsonObject.put("kid", value[1].equals("kid"));
+//                    String outputKey = jsonObject.toJSONString();
+//                    output.collect(new Text(outputKey), null);
+//                    break;
                 }
             }
 
             Collections.sort(time);
 
-//            linkedHashMap.put("start",time.get(0));
-//            linkedHashMap.put("userId",userId);
-//            linkedHashMap.put("session",session);
-//            linkedHashMap.put("end",lastTime);
-//            linkedHashMap.put("recommendations",recommendations);
-//            linkedHashMap.put("actions",actions);
-//            linkedHashMap.put("popular",popular);
-//            linkedHashMap.put("recommended",recommended);
-//            linkedHashMap.put("searched",searched);
-//            linkedHashMap.put("queued",queued);
-//            linkedHashMap.put("hover",hover);
-//            linkedHashMap.put("browsed",browsed);
-//            linkedHashMap.put("played",played);
-//            linkedHashMap.put("recent",recent);
-//            linkedHashMap.put("rated",rated);
-//            linkedHashMap.put("reviewed",reviewed);
+            /*
+            linkedHashMap.put("start",time.get(0));
+            linkedHashMap.put("userId",userId);
+            linkedHashMap.put("session",session);
+            linkedHashMap.put("end",lastTime);
+            linkedHashMap.put("recommendations",recommendations);
+            linkedHashMap.put("actions",actions);
+            linkedHashMap.put("popular",popular);
+            linkedHashMap.put("recommended",recommended);
+            linkedHashMap.put("searched",searched);
+            linkedHashMap.put("queued",queued);
+            linkedHashMap.put("hover",hover);
+            linkedHashMap.put("browsed",browsed);
+            linkedHashMap.put("played",played);
+            linkedHashMap.put("recent",recent);
+            linkedHashMap.put("rated",rated);
+            linkedHashMap.put("reviewed",reviewed);
+            */
 
             jsonObject.put("start",time.get(0));
             jsonObject.put("userId",userId);
@@ -279,7 +266,7 @@ public class cleaning extends Configured implements Tool{
 
 //            String outputKey = linkedHashMap.toString();
             String outputKey = jsonObject.toJSONString();
-            output.collect(new Text(outputKey), null);
+            output.collect(new Text(outputKey), NullWritable.get());
         }
     }
 
@@ -310,8 +297,10 @@ public class cleaning extends Configured implements Tool{
         FileOutputFormat.setOutputPath(jobConf, new Path(args[2]));
 
         // Set Compression type of the mapreduce job
-//        jobConf.setBoolean("mapred.output.compress", true);
-//        jobConf.setClass("mapred.output.compression.codec", GzipCodec.class, CompressionCodec.class);
+      /*
+        jobConf.setBoolean("mapred.output.compress", true);
+        jobConf.setClass("mapred.output.compression.codec", GzipCodec.class, CompressionCodec.class);
+        */
 
         JobClient.runJob(jobConf);
         return 0;
