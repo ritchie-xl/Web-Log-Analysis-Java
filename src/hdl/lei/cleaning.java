@@ -1,4 +1,4 @@
-package vforce.lei;
+package hdl.lei;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -215,14 +215,9 @@ public class cleaning extends Configured implements Tool{
                 else if(flag == 'x'){
                     linkedHashMap.put("kid",!(value[1].equals("kid")));
                     linkedHashMap.put("end",timestamp);
-//                    jsonObject.put("kid",!(value[1].equals("kid")));
                     jsonObject.put("end",timestamp);
 
-//            String outputKey = linkedHashMap.toString();
                     jsonObject.put("kid", value[1].equals("kid"));
-//                    String outputKey = jsonObject.toJSONString();
-//                    output.collect(new Text(outputKey), null);
-//                    break;
                 }
             }
 
@@ -280,8 +275,8 @@ public class cleaning extends Configured implements Tool{
         jobConf.setOutputKeyClass(Text.class);
         jobConf.setOutputValueClass(Text.class);
 
-        jobConf.setMapperClass(vforce.lei.cleaning.mapper.class);
-        jobConf.setReducerClass(vforce.lei.cleaning.reducer.class);
+        jobConf.setMapperClass(cleaning.mapper.class);
+        jobConf.setReducerClass(cleaning.reducer.class);
 
         jobConf.setInputFormat(TextInputFormat.class);
         jobConf.setOutputFormat(TextOutputFormat.class);
@@ -300,7 +295,7 @@ public class cleaning extends Configured implements Tool{
       /*
         jobConf.setBoolean("mapred.output.compress", true);
         jobConf.setClass("mapred.output.compression.codec", GzipCodec.class, CompressionCodec.class);
-        */
+      */
 
         JobClient.runJob(jobConf);
         return 0;

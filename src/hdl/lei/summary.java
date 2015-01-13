@@ -1,4 +1,4 @@
-package vforce.lei;
+package hdl.lei;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;

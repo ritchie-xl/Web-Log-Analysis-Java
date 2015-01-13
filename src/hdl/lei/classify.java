@@ -1,4 +1,4 @@
-package vforce.lei;
+package hdl.lei;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
@@ -98,8 +98,8 @@ public class classify extends Configured implements Tool{
             jobConf.setOutputKeyClass(Text.class);
             jobConf.setOutputValueClass(Text.class);
 
-            jobConf.setMapperClass(vforce.lei.classify.mapper.class);
-            jobConf.setReducerClass(vforce.lei.classify.reducer.class);
+            jobConf.setMapperClass(classify.mapper.class);
+            jobConf.setReducerClass(classify.reducer.class);
 
             jobConf.setInputFormat(TextInputFormat.class);
             jobConf.setOutputFormat(TextOutputFormat.class);
