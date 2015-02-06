@@ -3,7 +3,7 @@ package test;
 import org.json.simple.parser.ContainerFactory;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import vforce.lei.support;
+import hdl.lei.support;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -21,7 +21,7 @@ public class json {
 
         String line = reader.readLine();
 
-        LinkedHashMap linkedHashMap = vforce.lei.support.readWithoutPrefix(line);
+        LinkedHashMap linkedHashMap = support.readWithoutPrefix(line);
 
         Iterator it = linkedHashMap.entrySet().iterator();
 

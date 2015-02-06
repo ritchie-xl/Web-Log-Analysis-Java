@@ -213,11 +213,11 @@ public class cleaning extends Configured implements Tool{
                     reviewed.put(payload[0],itemId);
                 }
                 else if(flag == 'x'){
-                    linkedHashMap.put("kid",!(value[1].equals("kid")));
+                    linkedHashMap.put("kid",false);
                     linkedHashMap.put("end",timestamp);
                     jsonObject.put("end",timestamp);
 
-                    jsonObject.put("kid", value[1].equals("kid"));
+                    jsonObject.put("kid", false);
                 }
             }
 
@@ -241,6 +241,10 @@ public class cleaning extends Configured implements Tool{
             linkedHashMap.put("rated",rated);
             linkedHashMap.put("reviewed",reviewed);
             */
+
+            if(jsonObject.get("kid")==null){
+                jsonObject.put("kid",true);
+            }
 
             jsonObject.put("start",time.get(0));
             jsonObject.put("userId",userId);
@@ -283,13 +287,13 @@ public class cleaning extends Configured implements Tool{
 
         // Add multiple files as input of MapReduce program
         FileSystem fs = FileSystem.get(jobConf);
-        FileStatus[] statusList = fs.listStatus(new Path(args[1]));
+        FileStatus[] statusList = fs.listStatus(new Path(args[0]));
         if (statusList != null) {
             for (FileStatus status : statusList) {
                 FileInputFormat.addInputPath(jobConf, status.getPath());
             }
         }
-        FileOutputFormat.setOutputPath(jobConf, new Path(args[2]));
+        FileOutputFormat.setOutputPath(jobConf, new Path(args[1]));
 
         // Set Compression type of the mapreduce job
       /*
