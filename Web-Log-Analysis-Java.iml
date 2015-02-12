@@ -17,5 +17,6 @@
     <orderEntry type="library" name="hadoop-annotations-2.0.0-cdh4.4.0" level="project" />
     <orderEntry type="library" name="commons-logging-1.2" level="project" />
     <orderEntry type="library" name="commons-logging-1.21" level="project" />
+    <orderEntry type="library" name="javacsv" level="project" />
   </component>
 </module>

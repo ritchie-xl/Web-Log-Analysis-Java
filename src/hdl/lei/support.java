@@ -153,7 +153,8 @@ public class support {
                     // Read all the subfields
                     if (m1.getValue().getClass().equals
                             (java.util.LinkedHashMap.class)) {
-                        retVal.put(m1.getKey().toString(),m1.getValue().toString());
+                        // Only payload has the subfields, we omit the payload key
+//                        retVal.put(m1.getKey().toString(),m1.getValue().toString());
                         LinkedHashMap l = (LinkedHashMap) m1.getValue();
                         Iterator i = l.entrySet().iterator();
                         while (i.hasNext()) {
